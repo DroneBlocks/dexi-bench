@@ -1,6 +1,6 @@
 # Benchmark Bag Recording Guide
 
-Canonical rosbags are the **input side** of every dexi_bench run. They must be recorded once, named with a version suffix, and then replayed byte-identically across all hardware platforms. Re-recording is an explicit version bump (`v1` → `v2`), never a silent refresh.
+Canonical rosbags are the **input side** of every dexi-bench run. They must be recorded once, named with a version suffix, and then replayed byte-identically across all hardware platforms. Re-recording is an explicit version bump (`v1` → `v2`), never a silent refresh.
 
 ## Bag set (v1)
 

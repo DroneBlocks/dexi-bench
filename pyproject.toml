@@ -3,7 +3,7 @@ requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "dexi_bench"
+name = "dexi-bench"
 version = "0.0.1"
 description = "Cross-platform performance benchmarking harness for Dexi drone packages"
 readme = "README.md"

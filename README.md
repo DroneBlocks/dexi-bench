@@ -1,8 +1,10 @@
-# dexi_bench
+# dexi-bench
 
 **Cross-platform performance benchmarking harness for DEXI drone packages.**
 
 Runs identical workloads — canned rosbags, fixed prompt sets, deterministic SITL scenarios — against the most CPU- and accelerator-intensive nodes in the DEXI stack, then records FPS, latency, CPU, memory, temperature, and power to versioned JSON results so performance can be tracked **over time, across hardware, and across releases**.
+
+*Naming note: the project, GitHub repo, and PyPI distribution are `dexi-bench` (hyphenated). The Python import name is `dexi_bench` (underscored), because that's required to be a valid Python identifier. So `pip install dexi-bench` ships a package you use as `from dexi_bench.schema.result import BenchResult`. This mirrors the convention used by packages like `scikit-learn` / `sklearn` and `flask-sqlalchemy` / `flask_sqlalchemy`.*
 
 ## Why
 
@@ -18,7 +20,7 @@ The DEXI stack now runs on a widening matrix of hardware — CM4, CM5, Pi 5, Pi 
 - "How much CPU headroom does `dexi_apriltag` leave for offboard control?"
 - "Which platform should we recommend to a community member running our challenge?"
 
-…are answered today with anecdotes and one-off screenshots. `dexi_bench` replaces that with committed JSON result files, historical comparison, and automated regression detection on every package update.
+…are answered today with anecdotes and one-off screenshots. `dexi-bench` replaces that with committed JSON result files, historical comparison, and automated regression detection on every package update.
 
 ## Benchmark targets
 
@@ -53,11 +55,11 @@ Every run records the detected platform so results are always attributable to sp
 
 ## Design principles
 
-1. **Black-box.** dexi_bench observes target nodes via ROS2 topic subscription and stdout parsing. It does **not** import from or modify `dexi_yolo`, `dexi_llm`, `apriltag_ros`, or any target package. Adding a new target doesn't require changes to that target.
+1. **Black-box.** dexi-bench observes target nodes via ROS2 topic subscription and stdout parsing. It does **not** import from or modify `dexi_yolo`, `dexi_llm`, `apriltag_ros`, or any target package. Adding a new target doesn't require changes to that target.
 2. **Reproducible.** Canonical rosbags and prompt sets are recorded once, versioned (`v1`, `v2`), and replayed byte-identically across all platforms. Only hardware and software under test vary between runs.
 3. **Historical.** Every run writes a JSON result file committed to `results/<platform>/<date>_<sha>_<workload>.json`. `bench-compare` renders markdown comparison tables and flags regressions against the most recent prior result in the same group.
 4. **Portable.** Platform-specific system monitors (`tegrastats` on Jetson, `vcgencmd` on Pi, `psutil` everywhere) are shims behind a common interface; the same harness runs on any supported platform.
-5. **Not a ROS package.** `dexi_bench` is a plain Python project — `pyproject.toml`, `pip install -e .`, entry-point CLIs. It uses `rclpy` for topic subscription and `ros2 bag play` via subprocess for bag playback, but it has no `package.xml` and doesn't need `colcon build`. Works wherever ROS2 is sourced.
+5. **Not a ROS package.** `dexi-bench` is a plain Python project — `pyproject.toml`, `pip install -e .`, entry-point CLIs. It uses `rclpy` for topic subscription and `ros2 bag play` via subprocess for bag playback, but it has no `package.xml` and doesn't need `colcon build`. Works wherever ROS2 is sourced.
 
 ## Install
 
@@ -71,7 +73,9 @@ Requirements:
 source /opt/ros/jazzy/setup.bash
 source ~/dexi_ws/install/setup.bash
 
-cd ~/dexi-sim-ftw/dexi_bench
+cd ~/_dev
+git clone https://github.com/DroneBlocks/dexi-bench.git
+cd dexi-bench
 pip install -e . --break-system-packages
 ```
 
@@ -193,16 +197,17 @@ Every run produces a JSON file like:
 ## Layout
 
 ```
-dexi_bench/
-├── pyproject.toml              # pip install -e .
+dexi-bench/                     # repo root (hyphenated)
+├── pyproject.toml              # name = "dexi-bench" (hyphen)
 ├── README.md
 ├── docs/
 │   ├── DESIGN.md               # full architecture, open questions
 │   └── BAG_RECORDING.md        # how to record canonical bags
-├── dexi_bench/
+├── dexi_bench/                 # Python import package (underscore — required)
 │   ├── platform.py             # pi5 / cm4 / cm5 / orin_nano / hailo / jetson detection
 │   ├── runners/
-│   │   └── yolo_runner.py      # bench-yolo entry point
+│   │   ├── yolo_runner.py      # bench-yolo entry point
+│   │   └── apriltag_runner.py  # bench-apriltag entry point
 │   ├── monitors/
 │   │   ├── base.py             # SystemMonitor + Sample + MonitorSummary
 │   │   └── samplers.py         # psutil / vcgencmd / tegrastats shims

@@ -1,12 +1,12 @@
-# dexi_bench Design
+# dexi-bench Design
 
 ## Goal
 
-Give the Dexi project and community a single source of truth for **how each package performs on each supported hardware platform**, tracked over time so regressions are visible at release time.
+Give the DEXI project and community a single source of truth for **how each package performs on each supported hardware platform**, tracked over time so regressions are visible at release time.
 
 ## Non-goals
 
-- Not a replacement for integration tests — dexi_bench measures performance, not correctness beyond basic sanity.
+- Not a replacement for integration tests — dexi-bench measures performance, not correctness beyond basic sanity.
 - Not a CI-blocking gate (at least initially) — results are informational, flagged in PRs for review.
 
 ## Architecture
@@ -43,7 +43,7 @@ Give the Dexi project and community a single source of truth for **how each pack
 
 ## Black-box observation
 
-dexi_bench does **not** import from or modify target packages. Metrics are gathered two ways:
+dexi-bench does **not** import from or modify target packages. Metrics are gathered two ways:
 
 1. **Topic subscription.** Runner subscribes to the target's output topic (e.g. `/yolo_detections`) and times inter-message intervals externally → FPS, p50/p95.
 2. **Stdout parsing.** Target nodes already log aggregated stats on shutdown (see `dexi_yolo_node_hailo.py:254`, `dexi_yolo_node_onnx.py:428`). The runner captures stdout and regexes final numbers.
@@ -138,5 +138,5 @@ Flags are informational, not blocking, until we trust the rules.
 ## Open questions
 
 - Power measurement: Jetson has `tegrastats`, Pi has `vcgencmd measure_volts` but no amperage without extra hardware. Do we accept "power not available" for Pi, or add a USB power meter recommendation?
-- Where do the canonical bags live? Separate `dexi-bench-data` repo/release vs embedded in dexi_bench? (Leaning: separate release artifact, `fetch_bags.sh` downloads.)
+- Where do the canonical bags live? Separate `dexi-bench-data` repo/release vs embedded in dexi-bench? (Leaning: separate release artifact, `fetch_bags.sh` downloads.)
 - Should `compare.py` post a comment on PRs that modify a target package? (Post-MVP.)
