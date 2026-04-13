@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dexi_bench"
+version = "0.0.1"
+description = "Cross-platform performance benchmarking harness for Dexi drone packages"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Dennis Baldwin", email = "db@droneblocks.io" }]
+requires-python = ">=3.10"
+dependencies = [
+    "psutil>=5.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+bench-yolo = "dexi_bench.runners.yolo_runner:main"
+bench-apriltag = "dexi_bench.runners.apriltag_runner:main"
+bench-compare = "dexi_bench.compare:main"
+
+[tool.setuptools.packages.find]
+include = ["dexi_bench*"]
+exclude = ["results*", "config*", "docs*"]
