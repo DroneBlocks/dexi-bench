@@ -61,6 +61,19 @@ class SystemMonitor:
             self._thread.join(timeout=self._interval * 3)
         return self._summarize()
 
+    @property
+    def samples(self) -> List[Sample]:
+        """Raw per-sample series, relative to start (t is monotonic seconds).
+
+        Steady-state runners only need the aggregated MonitorSummary; transient
+        profilers (e.g. thermal cooldown) need the full curve, so expose it.
+        """
+        return list(self._samples)
+
+    @property
+    def start_t(self) -> float:
+        return self._start_t
+
     def _loop(self) -> None:
         while not self._stop.is_set():
             try:

@@ -140,3 +140,26 @@ Flags are informational, not blocking, until we trust the rules.
 - Power measurement: Jetson has `tegrastats`, Pi has `vcgencmd measure_volts` but no amperage without extra hardware. Do we accept "power not available" for Pi, or add a USB power meter recommendation?
 - Where do the canonical bags live? Separate `dexi-bench-data` repo/release vs embedded in dexi-bench? (Leaning: separate release artifact, `fetch_bags.sh` downloads.)
 - Should `compare.py` post a comment on PRs that modify a target package? (Post-MVP.)
+
+## Profilers (transient measurements)
+
+Runners answer "what's the steady-state number for this package on this
+platform?" and collapse a run to one `BenchResult`. A second class of
+question — "what does this transient *look like* over time?" — has no package
+under test and needs the raw curve, not an aggregate. Those live in
+`dexi_bench/profilers/` and write a different result shape:
+
+```
+results/<platform_kind>/profiles/<date>_<sha>_<profile>_<scenario>.csv   # raw time-series
+results/<platform_kind>/profiles/<date>_<sha>_<profile>_<scenario>.json  # small summary
+```
+
+Profilers deliberately **reuse** the steady-state machinery — `platform.detect()`
+and `monitors/samplers.pick_sampler()` are shared, so a profiler gets the right
+temp/power shim for free. The only addition to the core was exposing the raw
+samples on `SystemMonitor` (the runners never needed them).
+
+First profiler: **thermal** (`bench-thermal`) — SoC cooldown under a cooling
+scenario (fan vs takeoff prop-wash), overlaid by `bench-thermal-compare`. This
+is what answers "does the drone cool itself better in the air than on the
+bench, and does it clear the throttle ceiling?" — previously an anecdote.
