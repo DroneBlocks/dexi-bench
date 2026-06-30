@@ -58,6 +58,42 @@ def pi_sample() -> Sample:
     return s
 
 
+def vcgencmd_clock_mhz() -> Optional[float]:
+    """ARM core clock in MHz. Drops to ~1500 when the SoC soft-throttles."""
+    if not shutil.which("vcgencmd"):
+        return None
+    try:
+        out = subprocess.check_output(
+            ["vcgencmd", "measure_clock", "arm"], stderr=subprocess.DEVNULL, timeout=1
+        ).decode()
+        m = re.search(r"=(\d+)", out)
+        return round(int(m.group(1)) / 1_000_000) if m else None
+    except (subprocess.CalledProcessError, subprocess.TimeoutExpired, FileNotFoundError):
+        return None
+
+
+def vcgencmd_throttled_now() -> Optional[int]:
+    """1 if currently throttled (get_throttled bit 2), else 0; None if no vcgencmd."""
+    if not shutil.which("vcgencmd"):
+        return None
+    try:
+        out = subprocess.check_output(
+            ["vcgencmd", "get_throttled"], stderr=subprocess.DEVNULL, timeout=1
+        ).decode()
+        m = re.search(r"=0x([0-9a-fA-F]+)", out)
+        return (int(m.group(1), 16) & 0x4) and 1 or 0 if m else None
+    except (subprocess.CalledProcessError, subprocess.TimeoutExpired, FileNotFoundError):
+        return None
+
+
+def pi_sample_full() -> Sample:
+    """pi_sample plus ARM clock + live-throttle flag (for thermal profiling)."""
+    s = pi_sample()
+    s.clock_mhz = vcgencmd_clock_mhz()
+    s.throttled_now = vcgencmd_throttled_now()
+    return s
+
+
 class _TegrastatsReader:
     """Reads tegrastats output in a background thread, exposes latest line."""
 
@@ -133,3 +169,66 @@ def pick_sampler(platform_kind: str, has_jetson: bool):
     if platform_kind in ("pi5", "cm4", "cm5"):
         return pi_sample
     return psutil_sample
+
+
+class FcTempReader:
+    """Background MAVLink reader for flight-controller board temperature.
+
+    PX4 doesn't expose the STM32 die temp, but it streams the on-board IMU
+    temperature in HIGHRES_IMU (and baro temp in SCALED_PRESSURE) — the
+    standard proxy for 'FC temp'. We keep the latest value; the sampler reads
+    it without blocking. Best-effort: if pymavlink is missing or the endpoint
+    is unreachable, latest stays None and callers just see a blank column.
+    """
+
+    def __init__(self, url: str) -> None:
+        self._url = url
+        self._latest: Optional[float] = None
+        self._lock = threading.Lock()
+        self._stop = threading.Event()
+        self._started = False
+
+    def start(self) -> None:
+        if self._started:
+            return
+        self._started = True
+        threading.Thread(target=self._run, daemon=True).start()
+
+    def _run(self) -> None:
+        try:
+            from pymavlink import mavutil
+        except ImportError:
+            return
+        try:
+            conn = mavutil.mavlink_connection(self._url)
+        except Exception:
+            return
+        while not self._stop.is_set():
+            msg = conn.recv_match(
+                type=["HIGHRES_IMU", "SCALED_PRESSURE"], blocking=True, timeout=2
+            )
+            if msg is None:
+                continue
+            # HIGHRES_IMU.temperature is degC (float); SCALED_PRESSURE is cdegC.
+            t = msg.temperature
+            if msg.get_type() == "SCALED_PRESSURE":
+                t = t / 100.0
+            if t:
+                with self._lock:
+                    self._latest = round(float(t), 1)
+
+    def read(self) -> Optional[float]:
+        with self._lock:
+            return self._latest
+
+    def stop(self) -> None:
+        self._stop.set()
+
+
+def with_fc_temp(base_fn, reader: FcTempReader):
+    """Wrap a sample fn so each Sample also carries the latest FC board temp."""
+    def _fn() -> Sample:
+        s = base_fn()
+        s.fc_temp_c = reader.read()
+        return s
+    return _fn

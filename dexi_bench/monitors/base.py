@@ -23,6 +23,13 @@ class Sample:
     mem_mb: Optional[float] = None
     temp_c: Optional[float] = None
     power_w: Optional[float] = None
+    # Optional extras some platforms can fill (left None elsewhere, per the
+    # "fill what you can" contract). clock_mhz / throttled_now are Pi-only
+    # (vcgencmd); fc_temp_c is the flight-controller board temp read over
+    # MAVLink (HIGHRES_IMU), only populated when a profiler wires it up.
+    clock_mhz: Optional[float] = None
+    throttled_now: Optional[int] = None
+    fc_temp_c: Optional[float] = None
 
 
 @dataclass

@@ -1,0 +1,16 @@
+{
+  "scenario": "takeoff",
+  "platform_kind": "cm5",
+  "git_sha": "d52f1d9",
+  "timestamp": "2026-06-30T00:00:00+00:00",
+  "interval_s": 1.0,
+  "duration_s": 123.0,
+  "samples": 120,
+  "start_c": 83.2,
+  "min_c": 40.8,
+  "drop_c": 42.4,
+  "fc_start_c": null,
+  "fc_min_c": null,
+  "fc_drop_c": null,
+  "notes": "Captured 2026-06-30 on dexi-9e6a (CM5 @192.168.68.60) via remote_logger; hot bench baseline ~85C then cooling triggered. clock_mhz from vcgencmd measure_clock arm (1500=soft-throttle cap, 2400=full). FC temp not captured this run. cpu_pct=total across 4 cores."
+}

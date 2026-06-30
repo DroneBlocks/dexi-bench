@@ -16,6 +16,8 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=7"]
+# For bench-thermal --fc-url (flight-controller board temp over MAVLink).
+fc = ["pymavlink>=2.4"]
 
 [project.scripts]
 bench-yolo = "dexi_bench.runners.yolo_runner:main"

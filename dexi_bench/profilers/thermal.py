@@ -34,10 +34,13 @@ from pathlib import Path
 from typing import List, Optional
 
 from ..monitors.base import Sample, SystemMonitor
-from ..monitors.samplers import pick_sampler
+from ..monitors.samplers import (
+    FcTempReader, pick_sampler, pi_sample_full, with_fc_temp,
+)
 from ..platform import detect
 
-CSV_FIELDS = ["elapsed_s", "temp_c", "cpu_pct", "mem_mb", "power_w"]
+CSV_FIELDS = ["elapsed_s", "temp_c", "clock_mhz", "throttled_now",
+              "fc_temp_c", "cpu_pct", "mem_mb", "power_w"]
 
 
 @dataclass
@@ -52,6 +55,9 @@ class ProfileSummary:
     start_c: Optional[float]
     min_c: Optional[float]
     drop_c: Optional[float]
+    fc_start_c: Optional[float] = None
+    fc_min_c: Optional[float] = None
+    fc_drop_c: Optional[float] = None
     notes: str = ""
 
 
@@ -70,6 +76,9 @@ def _rows(samples: List[Sample], t0: float) -> List[dict]:
         rows.append({
             "elapsed_s": round(s.t - t0, 1),
             "temp_c": s.temp_c,
+            "clock_mhz": s.clock_mhz,
+            "throttled_now": s.throttled_now,
+            "fc_temp_c": s.fc_temp_c,
             "cpu_pct": s.cpu_pct,
             "mem_mb": round(s.mem_mb) if s.mem_mb is not None else None,
             "power_w": s.power_w,
@@ -78,9 +87,21 @@ def _rows(samples: List[Sample], t0: float) -> List[dict]:
 
 
 def run_profile(scenario: str, secs: int, interval_s: float, results_dir: Path,
-                baseline_s: int = 8, notes: str = "") -> ProfileSummary:
+                baseline_s: int = 8, notes: str = "", fc_url: Optional[str] = None) -> ProfileSummary:
     plat = detect()
-    sample_fn = pick_sampler(plat.kind, plat.has_jetson)
+    # On a Pi, use the richer sampler (adds ARM clock + throttle flag).
+    if plat.kind in ("pi5", "cm4", "cm5"):
+        sample_fn = pi_sample_full
+    else:
+        sample_fn = pick_sampler(plat.kind, plat.has_jetson)
+
+    # Optionally layer in flight-controller board temp over MAVLink.
+    fc_reader: Optional[FcTempReader] = None
+    if fc_url:
+        fc_reader = FcTempReader(fc_url)
+        fc_reader.start()
+        sample_fn = with_fc_temp(sample_fn, fc_reader)
+        print(f">> reading FC board temp over MAVLink: {fc_url}")
 
     mon = SystemMonitor(sample_fn, interval_s=interval_s)
     print(f">> thermal profile: scenario={scenario!r} platform={plat.kind} "
@@ -97,14 +118,21 @@ def run_profile(scenario: str, secs: int, interval_s: float, results_dir: Path,
     while time.monotonic() < deadline:
         time.sleep(0.5)
     summary_stats = mon.stop()
+    if fc_reader is not None:
+        fc_reader.stop()
 
     samples = mon.samples
     t0 = mon.start_t
     rows = _rows(samples, t0)
-    temps = [r["temp_c"] for r in rows if r["temp_c"] is not None]
-    start_c = temps[0] if temps else None
-    min_c = min(temps) if temps else None
-    drop_c = round(start_c - min_c, 1) if (start_c is not None and min_c is not None) else None
+
+    def drop_of(field: str):
+        vals = [r[field] for r in rows if r[field] is not None]
+        if not vals:
+            return None, None, None
+        return vals[0], min(vals), round(vals[0] - min(vals), 1)
+
+    start_c, min_c, drop_c = drop_of("temp_c")
+    fc_start_c, fc_min_c, fc_drop_c = drop_of("fc_temp_c")
 
     summary = ProfileSummary(
         scenario=scenario,
@@ -117,6 +145,9 @@ def run_profile(scenario: str, secs: int, interval_s: float, results_dir: Path,
         start_c=start_c,
         min_c=min_c,
         drop_c=drop_c,
+        fc_start_c=fc_start_c,
+        fc_min_c=fc_min_c,
+        fc_drop_c=fc_drop_c,
         notes=notes,
     )
 
@@ -149,10 +180,14 @@ def main(argv: Optional[List[str]] = None) -> int:
                     help="hot-baseline hold before the GO cue, s (default 8)")
     ap.add_argument("--results-dir", type=Path, default=Path("results"))
     ap.add_argument("--notes", default="")
+    ap.add_argument("--fc-url", default=None,
+                    help="MAVLink endpoint for flight-controller board temp, e.g. "
+                         "udpin:0.0.0.0:14550 or /dev/ttyACM0 (needs pymavlink). "
+                         "Omit to skip FC temp.")
     args = ap.parse_args(argv)
 
     run_profile(args.scenario, args.secs, args.interval, args.results_dir,
-                baseline_s=args.baseline, notes=args.notes)
+                baseline_s=args.baseline, notes=args.notes, fc_url=args.fc_url)
     return 0
 
 
