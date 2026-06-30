@@ -237,23 +237,38 @@ bench-thermal --scenario takeoff --secs 120   # prop-wash after takeoff
 ```
 
 Each run holds a hot baseline, prints a **GO** cue (trigger the cooling then),
-logs SoC temperature at 1 Hz reusing the same `vcgencmd`/`tegrastats` samplers
-as the runners, and writes:
+logs at 1 Hz reusing the same `vcgencmd`/`tegrastats` samplers as the runners,
+and writes:
 
 ```
 results/<platform>/profiles/<date>_<sha>_thermal_<scenario>.csv    # raw 1 Hz curve
 results/<platform>/profiles/<date>_<sha>_thermal_<scenario>.json   # start/min/drop summary
 ```
 
-Overlay every scenario onto one time-aligned chart:
+On a Pi each sample also records **ARM clock** and the **throttle bit** (so you
+can see the soft-throttle cap lift as the SoC cools). Optionally add the
+**flight-controller board temperature** — PX4 streams the FC's IMU temp in
+MAVLink `HIGHRES_IMU`, the standard proxy for "FC temp" (the STM32 die temp
+isn't exposed). Point `--fc-url` at a MAVLink endpoint (`pip install dexi-bench[fc]`):
+
+```bash
+bench-thermal --scenario takeoff --secs 120 --fc-url udpin:0.0.0.0:14550
+```
+
+It's best-effort: if pymavlink is missing or the endpoint is unreachable, the FC
+column is simply left blank.
+
+Overlay every scenario onto one time-aligned page (SoC temp + clock panels, with
+FC temp dashed when present):
 
 ```bash
 bench-thermal-compare --platform cm5 --out thermal.html
 ```
 
 First result (CM5, 2026-06-30): a desk fan dropped the SoC **−25.3 °C** (85 → 60),
-while takeoff prop-wash dropped it **−42.4 °C** (83 → 41) — and cleared the
-throttle ceiling the fan couldn't. See `results/cm5/profiles/`.
+while takeoff prop-wash dropped it **−42.4 °C** (83 → 41) — and lifted the clock
+off its 1500 MHz throttle cap back to 2400 MHz that the fan couldn't. See
+`results/cm5/profiles/`.
 
 ## Related repos
 
