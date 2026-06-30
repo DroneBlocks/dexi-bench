@@ -218,6 +218,43 @@ dexi-bench/                     # repo root (hyphenated)
 └── results/                    # committed JSON results, per-platform subdirs
 ```
 
+## Profilers (transient measurements)
+
+The runners above measure **steady-state** package performance and aggregate to
+a single number per run. Some questions are about a **transient** instead — the
+*shape* of a curve over time, with no package under test. Those live in
+`dexi_bench/profilers/` and keep the raw time-series rather than collapsing it.
+
+### Thermal cooldown
+
+How fast does the SoC shed heat under a given cooling method, and does it clear
+the soft-throttle ceiling? Run it **on the device** (where the sensors are),
+once per cooling scenario:
+
+```bash
+bench-thermal --scenario fan --secs 120       # desk fan blowing on it
+bench-thermal --scenario takeoff --secs 120   # prop-wash after takeoff
+```
+
+Each run holds a hot baseline, prints a **GO** cue (trigger the cooling then),
+logs SoC temperature at 1 Hz reusing the same `vcgencmd`/`tegrastats` samplers
+as the runners, and writes:
+
+```
+results/<platform>/profiles/<date>_<sha>_thermal_<scenario>.csv    # raw 1 Hz curve
+results/<platform>/profiles/<date>_<sha>_thermal_<scenario>.json   # start/min/drop summary
+```
+
+Overlay every scenario onto one time-aligned chart:
+
+```bash
+bench-thermal-compare --platform cm5 --out thermal.html
+```
+
+First result (CM5, 2026-06-30): a desk fan dropped the SoC **−25.3 °C** (85 → 60),
+while takeoff prop-wash dropped it **−42.4 °C** (83 → 41) — and cleared the
+throttle ceiling the fan couldn't. See `results/cm5/profiles/`.
+
 ## Related repos
 
 - [DroneBlocks/dexi_apriltag](https://github.com/DroneBlocks/dexi_apriltag) — AprilTag detection + corridor navigation + odometry (ships enabled by default)

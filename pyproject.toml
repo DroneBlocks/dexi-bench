@@ -21,6 +21,8 @@ dev = ["pytest>=7"]
 bench-yolo = "dexi_bench.runners.yolo_runner:main"
 bench-apriltag = "dexi_bench.runners.apriltag_runner:main"
 bench-compare = "dexi_bench.compare:main"
+bench-thermal = "dexi_bench.profilers.thermal:main"
+bench-thermal-compare = "dexi_bench.profilers.thermal_compare:main"
 
 [tool.setuptools.packages.find]
 include = ["dexi_bench*"]
