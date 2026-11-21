@@ -1,0 +1,1 @@
+Bar counter reads compressed_2hz instead of the 30 Hz stream (remap only)

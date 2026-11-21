@@ -1,0 +1,1 @@
+Camera format YUYV instead of XRGB8888

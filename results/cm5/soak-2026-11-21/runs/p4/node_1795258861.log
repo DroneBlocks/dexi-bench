@@ -1,0 +1,11 @@
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-11-21-11-01-02-926899-dexi-0ceb-28438
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [capture_media_node-1]: process started with pid [28450]
+[capture_media_node-1] [INFO] [1795258865.199432215] [dexi.capture_media]: capture_media ready: /home/dexi/dexi_media, http :8090, photo aux-off, video aux-off
+[capture_media_node-1] [INFO] [1795259179.365942936] [dexi.capture_media]: video_20261121_110619_360.mp4
+[capture_media_node-1] [INFO] [1795259780.575875534] [dexi.capture_media]: video_20261121_110619_360.mp4 (601 s)
+[capture_media_node-1] [WARN] [1795259818.397743581] [dexi.capture_media]: not recording
+[capture_media_node-1] [INFO] [1795259832.300112405] [dexi.capture_media]: video_20261121_111712_288.mp4
+[capture_media_node-1] [INFO] [1795259894.199361064] [dexi.capture_media]: video_20261121_111712_288.mp4 (62 s)
+[capture_media_node-1] [INFO] [1795259898.147662575] [dexi.capture_media]: video_20261121_111818_141.mp4
+[ERROR] [capture_media_node-1]: process has died [pid 28450, exit code -9, cmd '/home/dexi/dexi_ws/install/dexi_capture_media/lib/dexi_capture_media/capture_media_node --ros-args -r __node:=capture_media -r __ns:=/dexi --params-file /tmp/launch_params_mqv5wel4'].

@@ -1,0 +1,122 @@
+{
+  "label": "baseline@c4",
+  "notes": "Everything on, as configured for the soak",
+  "platform_kind": "cm5",
+  "started_utc": "2026-11-21T17:04:33+00:00",
+  "duration_s": 900.0,
+  "samples": 900,
+  "cpu_pct": {
+    "mean": 32.55,
+    "p95": 35.3,
+    "max": 41.6,
+    "min": 26.3
+  },
+  "temp_c": {
+    "mean": 73.12,
+    "p95": 74.1,
+    "max": 75.7,
+    "min": 71.4
+  },
+  "clock_mhz": {
+    "mean": 2386.56,
+    "p95": 2400,
+    "max": 2400,
+    "min": 1800
+  },
+  "throttled_now_share": 0.0,
+  "soft_temp_limit_now_share": 0.0,
+  "throttled_raw_last": 917504,
+  "mem_available_mb": {
+    "mean": 978.66,
+    "p95": 984,
+    "max": 994,
+    "min": 968
+  },
+  "swap_used_mb": {
+    "mean": 158.0,
+    "p95": 158,
+    "max": 158,
+    "min": 158
+  },
+  "pipelines": {
+    "camera": {
+      "hz": 29.94
+    },
+    "apriltag": {
+      "hz": 8.34,
+      "hit_rate": 1.0,
+      "hit_hz": 8.34
+    },
+    "yolo": {
+      "hz": 1.91,
+      "hit_rate": {
+        "water_barn": 1.0,
+        "toxic_fluid": 1.0
+      },
+      "other_class_rate": 0.0
+    },
+    "bar_counter": {
+      "hz": 1.92,
+      "msgs": 1725,
+      "expected_msgs": 1800,
+      "read_rate": 0.958,
+      "wrong_rate": 0.0,
+      "abstain_rate": 0.042,
+      "wrong_labels": {}
+    }
+  },
+  "procs_cpu_pct_mean": {
+    "dexi_yolo_onnx": 35.9,
+    "cam0": 20.7,
+    "apriltag_node": 13.4,
+    "px4_offboard_manager": 11.9,
+    "bar_counter_node": 11.4,
+    "python3": 11.1,
+    "micro_ros_agent": 5.8,
+    "telemetry": 5.5,
+    "image_throttle_apriltag_node": 2.8,
+    "image_throttle_compressed_node": 2.7,
+    "kworker": 2.2,
+    "rosbridge_websocket": 0.6,
+    "rosapi": 0.5,
+    "led_flight_mode_status": 0.4,
+    "node-red": 0.1,
+    "ros2": 0.1,
+    "mavlink-routerd": 0.1,
+    "mavlink2rest": 0.1,
+    "led_service": 0.1,
+    "dexi_platform_params": 0.1,
+    "base_link_to_camera_tf": 0.1,
+    "systemd-journald": 0.1,
+    "rcu_preempt": 0.1,
+    "containerd": 0.0,
+    "dockerd": 0.0
+  },
+  "procs_rss_mb_mean": {
+    "dexi_yolo_onnx": 245.4,
+    "cam0": 140.1,
+    "apriltag_node": 121.4,
+    "px4_offboard_manager": 60.5,
+    "bar_counter_node": 188.4,
+    "python3": 96.7,
+    "micro_ros_agent": 38.0,
+    "telemetry": 54.0,
+    "image_throttle_apriltag_node": 50.0,
+    "image_throttle_compressed_node": 49.5,
+    "kworker": 0.0,
+    "rosbridge_websocket": 92.5,
+    "rosapi": 84.0,
+    "led_flight_mode_status": 91.5,
+    "node-red": 60.0,
+    "ros2": 45.2,
+    "mavlink-routerd": 1.0,
+    "mavlink2rest": 2.5,
+    "led_service": 76.5,
+    "dexi_platform_params": 72.5,
+    "base_link_to_camera_tf": 53.0,
+    "systemd-journald": 44.1,
+    "rcu_preempt": 0.0,
+    "containerd": 22.5,
+    "dockerd": 37.0
+  }
+}

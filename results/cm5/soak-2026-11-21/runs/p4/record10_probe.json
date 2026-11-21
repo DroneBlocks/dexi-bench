@@ -1,0 +1,15 @@
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "h264",
+            "nb_frames": "9011"
+        }
+    ],
+    "format": {
+        "duration": "600.734000",
+        "size": "93782738"
+    }
+}

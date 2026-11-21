@@ -1,0 +1,11 @@
+--- /home/dexi/soak/runs/_pristine/launch.py	2026-11-20 23:52:55.710658148 +0000
++++ /home/dexi/dexi_ws/install/dexi_bringup/share/dexi_bringup/launch/dexi_bringup_cm5.launch.py	2026-11-21 09:27:56.038264992 +0000
+@@ -208,7 +208,7 @@
+         executable='throttle',
+         name='image_throttle_compressed_node',
+         arguments=['messages', '/cam0/image_raw/compressed', '2.0', '/cam0/image_raw/compressed_2hz'],
+-        condition=IfCondition(camera)
++        condition=IfCondition('false')
+     )
+     ld.add_action(image_throttle_compressed_node)
+     

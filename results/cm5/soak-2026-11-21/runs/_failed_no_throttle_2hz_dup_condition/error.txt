@@ -1,0 +1,81 @@
+dexi.service not active after warmup
+Nov 21 03:51:21 dexi-0ceb start.bash[71140]:  - SyntaxError: keyword argument repeated: condition (dexi_bringup_cm5.launch.py, line 212)
+Nov 21 03:51:21 dexi-0ceb start.bash[71140]:  - InvalidFrontendLaunchFileError: The launch file may have a syntax error, or its format is unknown
+Nov 21 03:51:21 dexi-0ceb systemd[1]: dexi.service: Main process exited, code=exited, status=1/FAILURE
+Nov 21 03:51:21 dexi-0ceb systemd[1]: dexi.service: Failed with result 'exit-code'.
+Nov 21 03:51:21 dexi-0ceb systemd[1]: dexi.service: Consumed 2.045s CPU time.
+Nov 21 03:51:21 dexi-0ceb systemd[1]: dexi.service: Scheduled restart job, restart counter is at 75.
+Nov 21 03:51:21 dexi-0ceb systemd[1]: Stopped dexi.service - DEXI ROS2 Bringup Service.
+Nov 21 03:51:21 dexi-0ceb systemd[1]: dexi.service: Consumed 2.045s CPU time.
+Nov 21 03:51:22 dexi-0ceb systemd[1]: Started dexi.service - DEXI ROS2 Bringup Service.
+Nov 21 03:51:23 dexi-0ceb start.bash[71143]: Platform from /etc/dexi-platform: cm5
+Nov 21 03:51:23 dexi-0ceb start.bash[71143]: Configuration loaded (platform=cm5): yolo=true, apriltags=true, bar_counter=true, tag_nav=false (tag_nav_dexi5.yaml), camera=true (768x432, XRGB8888, q60), servos=false, gpio=false, offboard=true, keyboard_control=false, rosbridge=true, led_pin=12, telemetry=true
+Nov 21 03:51:23 dexi-0ceb start.bash[71143]: Detected CM5 hardware, launching dexi_bringup_cm5.launch.py
+Nov 21 03:51:23 dexi-0ceb start.bash[71264]: [INFO] [launch]: All log files can be found below /home/dexi/.ros/log/2026-11-21-03-51-23-913113-dexi-0ceb-71264
+Nov 21 03:51:23 dexi-0ceb start.bash[71264]: [INFO] [launch]: Default logging verbosity is set to INFO
+Nov 21 03:51:23 dexi-0ceb start.bash[71264]: [ERROR] [launch]: Caught exception in launch (see debug for traceback): Caught multiple exceptions when trying to load file of format [py]:
+Nov 21 03:51:23 dexi-0ceb start.bash[71264]:  - SyntaxError: keyword argument repeated: condition (dexi_bringup_cm5.launch.py, line 212)
+Nov 21 03:51:23 dexi-0ceb start.bash[71264]:  - InvalidFrontendLaunchFileError: The launch file may have a syntax error, or its format is unknown
+Nov 21 03:51:23 dexi-0ceb systemd[1]: dexi.service: Main process exited, code=exited, status=1/FAILURE
+Nov 21 03:51:23 dexi-0ceb systemd[1]: dexi.service: Failed with result 'exit-code'.
+Nov 21 03:51:23 dexi-0ceb systemd[1]: dexi.service: Consumed 1.997s CPU time.
+Nov 21 03:51:24 dexi-0ceb systemd[1]: dexi.service: Scheduled restart job, restart counter is at 76.
+Nov 21 03:51:24 dexi-0ceb systemd[1]: Stopped dexi.service - DEXI ROS2 Bringup Service.
+Nov 21 03:51:24 dexi-0ceb systemd[1]: dexi.service: Consumed 1.997s CPU time.
+Nov 21 03:51:24 dexi-0ceb systemd[1]: Started dexi.service - DEXI ROS2 Bringup Service.
+Nov 21 03:51:25 dexi-0ceb start.bash[71267]: Platform from /etc/dexi-platform: cm5
+Nov 21 03:51:25 dexi-0ceb start.bash[71267]: Configuration loaded (platform=cm5): yolo=true, apriltags=true, bar_counter=true, tag_nav=false (tag_nav_dexi5.yaml), camera=true (768x432, XRGB8888, q60), servos=false, gpio=false, offboard=true, keyboard_control=false, rosbridge=true, led_pin=12, telemetry=true
+Nov 21 03:51:25 dexi-0ceb start.bash[71267]: Detected CM5 hardware, launching dexi_bringup_cm5.launch.py
+Nov 21 03:51:26 dexi-0ceb start.bash[71388]: [INFO] [launch]: All log files can be found below /home/dexi/.ros/log/2026-11-21-03-51-26-167036-dexi-0ceb-71388
+Nov 21 03:51:26 dexi-0ceb start.bash[71388]: [INFO] [launch]: Default logging verbosity is set to INFO
+Nov 21 03:51:26 dexi-0ceb start.bash[71388]: [ERROR] [launch]: Caught exception in launch (see debug for traceback): Caught multiple exceptions when trying to load file of format [py]:
+Nov 21 03:51:26 dexi-0ceb start.bash[71388]:  - SyntaxError: keyword argument repeated: condition (dexi_bringup_cm5.launch.py, line 212)
+Nov 21 03:51:26 dexi-0ceb start.bash[71388]:  - InvalidFrontendLaunchFileError: The launch file may have a syntax error, or its format is unknown
+Nov 21 03:51:26 dexi-0ceb systemd[1]: dexi.service: Main process exited, code=exited, status=1/FAILURE
+Nov 21 03:51:26 dexi-0ceb systemd[1]: dexi.service: Failed with result 'exit-code'.
+Nov 21 03:51:26 dexi-0ceb systemd[1]: dexi.service: Consumed 2.025s CPU time.
+Nov 21 03:51:26 dexi-0ceb systemd[1]: dexi.service: Scheduled restart job, restart counter is at 77.
+Nov 21 03:51:26 dexi-0ceb systemd[1]: Stopped dexi.service - DEXI ROS2 Bringup Service.
+Nov 21 03:51:26 dexi-0ceb systemd[1]: dexi.service: Consumed 2.025s CPU time.
+Nov 21 03:51:26 dexi-0ceb systemd[1]: Started dexi.service - DEXI ROS2 Bringup Service.
+Nov 21 03:51:27 dexi-0ceb start.bash[71391]: Platform from /etc/dexi-platform: cm5
+Nov 21 03:51:27 dexi-0ceb start.bash[71391]: Configuration loaded (platform=cm5): yolo=true, apriltags=true, bar_counter=true, tag_nav=false (tag_nav_dexi5.yaml), camera=true (768x432, XRGB8888, q60), servos=false, gpio=false, offboard=true, keyboard_control=false, rosbridge=true, led_pin=12, telemetry=true
+Nov 21 03:51:27 dexi-0ceb start.bash[71391]: Detected CM5 hardware, launching dexi_bringup_cm5.launch.py
+Nov 21 03:51:28 dexi-0ceb start.bash[71512]: [INFO] [launch]: All log files can be found below /home/dexi/.ros/log/2026-11-21-03-51-28-420307-dexi-0ceb-71512
+Nov 21 03:51:28 dexi-0ceb start.bash[71512]: [INFO] [launch]: Default logging verbosity is set to INFO
+Nov 21 03:51:28 dexi-0ceb start.bash[71512]: [ERROR] [launch]: Caught exception in launch (see debug for traceback): Caught multiple exceptions when trying to load file of format [py]:
+Nov 21 03:51:28 dexi-0ceb start.bash[71512]:  - SyntaxError: keyword argument repeated: condition (dexi_bringup_cm5.launch.py, line 212)
+Nov 21 03:51:28 dexi-0ceb start.bash[71512]:  - InvalidFrontendLaunchFileError: The launch file may have a syntax error, or its format is unknown
+Nov 21 03:51:28 dexi-0ceb systemd[1]: dexi.service: Main process exited, code=exited, status=1/FAILURE
+Nov 21 03:51:28 dexi-0ceb systemd[1]: dexi.service: Failed with result 'exit-code'.
+Nov 21 03:51:28 dexi-0ceb systemd[1]: dexi.service: Consumed 2.004s CPU time.
+Nov 21 03:51:28 dexi-0ceb systemd[1]: dexi.service: Scheduled restart job, restart counter is at 78.
+Nov 21 03:51:28 dexi-0ceb systemd[1]: Stopped dexi.service - DEXI ROS2 Bringup Service.
+Nov 21 03:51:28 dexi-0ceb systemd[1]: dexi.service: Consumed 2.004s CPU time.
+Nov 21 03:51:28 dexi-0ceb systemd[1]: Started dexi.service - DEXI ROS2 Bringup Service.
+Nov 21 03:51:29 dexi-0ceb start.bash[71515]: Platform from /etc/dexi-platform: cm5
+Nov 21 03:51:30 dexi-0ceb start.bash[71515]: Configuration loaded (platform=cm5): yolo=true, apriltags=true, bar_counter=true, tag_nav=false (tag_nav_dexi5.yaml), camera=true (768x432, XRGB8888, q60), servos=false, gpio=false, offboard=true, keyboard_control=false, rosbridge=true, led_pin=12, telemetry=true
+Nov 21 03:51:30 dexi-0ceb start.bash[71515]: Detected CM5 hardware, launching dexi_bringup_cm5.launch.py
+Nov 21 03:51:30 dexi-0ceb start.bash[71636]: [INFO] [launch]: All log files can be found below /home/dexi/.ros/log/2026-11-21-03-51-30-671354-dexi-0ceb-71636
+Nov 21 03:51:30 dexi-0ceb start.bash[71636]: [INFO] [launch]: Default logging verbosity is set to INFO
+Nov 21 03:51:30 dexi-0ceb start.bash[71636]: [ERROR] [launch]: Caught exception in launch (see debug for traceback): Caught multiple exceptions when trying to load file of format [py]:
+Nov 21 03:51:30 dexi-0ceb start.bash[71636]:  - SyntaxError: keyword argument repeated: condition (dexi_bringup_cm5.launch.py, line 212)
+Nov 21 03:51:30 dexi-0ceb start.bash[71636]:  - InvalidFrontendLaunchFileError: The launch file may have a syntax error, or its format is unknown
+Nov 21 03:51:30 dexi-0ceb systemd[1]: dexi.service: Main process exited, code=exited, status=1/FAILURE
+Nov 21 03:51:30 dexi-0ceb systemd[1]: dexi.service: Failed with result 'exit-code'.
+Nov 21 03:51:30 dexi-0ceb systemd[1]: dexi.service: Consumed 2.014s CPU time.
+Nov 21 03:51:30 dexi-0ceb systemd[1]: dexi.service: Scheduled restart job, restart counter is at 79.
+Nov 21 03:51:30 dexi-0ceb systemd[1]: Stopped dexi.service - DEXI ROS2 Bringup Service.
+Nov 21 03:51:30 dexi-0ceb systemd[1]: dexi.service: Consumed 2.014s CPU time.
+Nov 21 03:51:30 dexi-0ceb systemd[1]: Started dexi.service - DEXI ROS2 Bringup Service.
+Nov 21 03:51:32 dexi-0ceb start.bash[71639]: Platform from /etc/dexi-platform: cm5
+Nov 21 03:51:32 dexi-0ceb start.bash[71639]: Configuration loaded (platform=cm5): yolo=true, apriltags=true, bar_counter=true, tag_nav=false (tag_nav_dexi5.yaml), camera=true (768x432, XRGB8888, q60), servos=false, gpio=false, offboard=true, keyboard_control=false, rosbridge=true, led_pin=12, telemetry=true
+Nov 21 03:51:32 dexi-0ceb start.bash[71639]: Detected CM5 hardware, launching dexi_bringup_cm5.launch.py
+Nov 21 03:51:32 dexi-0ceb start.bash[71760]: [INFO] [launch]: All log files can be found below /home/dexi/.ros/log/2026-11-21-03-51-32-939745-dexi-0ceb-71760
+Nov 21 03:51:32 dexi-0ceb start.bash[71760]: [INFO] [launch]: Default logging verbosity is set to INFO
+Nov 21 03:51:32 dexi-0ceb start.bash[71760]: [ERROR] [launch]: Caught exception in launch (see debug for traceback): Caught multiple exceptions when trying to load file of format [py]:
+Nov 21 03:51:32 dexi-0ceb start.bash[71760]:  - SyntaxError: keyword argument repeated: condition (dexi_bringup_cm5.launch.py, line 212)
+Nov 21 03:51:32 dexi-0ceb start.bash[71760]:  - InvalidFrontendLaunchFileError: The launch file may have a syntax error, or its format is unknown
+Nov 21 03:51:33 dexi-0ceb systemd[1]: dexi.service: Main process exited, code=exited, status=1/FAILURE
+Nov 21 03:51:33 dexi-0ceb systemd[1]: dexi.service: Failed with result 'exit-code'.
+Nov 21 03:51:33 dexi-0ceb systemd[1]: dexi.service: Consumed 2.036s CPU time.

@@ -1,0 +1,7 @@
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-11-21-11-32-18-825702-dexi-0ceb-35820
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [capture_media_node-1]: process started with pid [35832]
+[capture_media_node-1] [INFO] [1795260740.287095205] [dexi.capture_media]: capture_media ready: /home/dexi/dexi_media, http :8090, photo aux-off, video aux-off
+[capture_media_node-1] [WARN] [1795260741.039985436] [dexi.capture_media]: disk almost full (32528 MB free)
+[capture_media_node-1] [WARN] [1795260744.761366633] [dexi.capture_media]: disk almost full (32528 MB free)
+[ERROR] [capture_media_node-1]: process has died [pid 35832, exit code -9, cmd '/home/dexi/dexi_ws/install/dexi_capture_media/lib/dexi_capture_media/capture_media_node --ros-args -r __node:=capture_media -r __ns:=/dexi --params-file /tmp/launch_params_sv9swyvu'].

@@ -1,0 +1,42 @@
+{
+ "label": "yolo_threads1",
+ "cpu_pct": {
+  "mean": 30.48,
+  "p95": 33.1,
+  "max": 38.9,
+  "min": 25.3
+ },
+ "temp_c": {
+  "mean": 72.42,
+  "p95": 73.6,
+  "max": 74.7,
+  "min": 69.2
+ },
+ "pipelines": {
+  "camera": {
+   "hz": 29.95
+  },
+  "apriltag": {
+   "hz": 8.4,
+   "hit_rate": 0.997,
+   "hit_hz": 8.37
+  },
+  "yolo": {
+   "hz": 1.92,
+   "hit_rate": {
+    "water_barn": 1.0,
+    "toxic_fluid": 1.0
+   },
+   "other_class_rate": 0.001
+  },
+  "bar_counter": {
+   "hz": 1.92,
+   "msgs": 1727,
+   "expected_msgs": 1800,
+   "read_rate": 0.959,
+   "wrong_rate": 0.0,
+   "abstain_rate": 0.041,
+   "wrong_labels": {}
+  }
+ }
+}

@@ -1,0 +1,12 @@
+--- /home/dexi/soak/runs/_pristine/launch.py	2026-11-20 23:52:55.710658148 +0000
++++ /home/dexi/dexi_ws/install/dexi_bringup/share/dexi_bringup/launch/dexi_bringup_cm5.launch.py	2026-11-21 04:44:12.055351166 +0000
+@@ -138,7 +138,8 @@
+             'jpeg_quality': camera_jpeg_quality,
+             'camera_info_url': 'file://' + os.path.join(get_package_share_directory('dexi_camera'), 'config', 'picam_3_arducam_768x432.yaml'),  # Use calibration file from dexi_camera package
+             'frame_id': 'camera',
+-            'camera_name': 'cam0'
++            'camera_name': 'cam0',
++            'FrameDurationLimits': [66666, 66666]
+         }],
+         condition=IfCondition(camera)
+     )

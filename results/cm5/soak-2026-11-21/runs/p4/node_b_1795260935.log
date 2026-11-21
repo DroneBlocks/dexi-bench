@@ -1,0 +1,10 @@
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-11-21-11-35-36-067386-dexi-0ceb-36283
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [capture_media_node-1]: process started with pid [36295]
+[capture_media_node-1] [INFO] [1795260937.190798326] [dexi.capture_media]: capture_media ready: /home/dexi/dexi_media, http :8090, photo aux-off, video aux-off
+[capture_media_node-1] [INFO] [1795260941.851227367] [dexi.capture_media]: photo_20261121_113541_848.jpg
+[capture_media_node-1] [INFO] [1795260943.951868501] [dexi.capture_media]: photo_20261121_113543_948.jpg
+[capture_media_node-1] [INFO] [1795260946.901374898] [dexi.capture_media]: photo_20261121_113546_897.jpg
+[capture_media_node-1] [INFO] [1795260949.045467218] [dexi.capture_media]: photo_20261121_113549_042.jpg
+[capture_media_node-1] [INFO] [1795260951.356684031] [dexi.capture_media]: photo_20261121_113551_353.jpg
+[ERROR] [capture_media_node-1]: process has died [pid 36295, exit code -9, cmd '/home/dexi/dexi_ws/install/dexi_capture_media/lib/dexi_capture_media/capture_media_node --ros-args -r __node:=capture_media -r __ns:=/dexi --params-file /tmp/launch_params_u34_8l9d'].

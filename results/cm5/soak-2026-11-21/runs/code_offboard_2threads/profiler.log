@@ -1,0 +1,42 @@
+{
+ "label": "code_offboard_2threads",
+ "cpu_pct": {
+  "mean": 32.19,
+  "p95": 35.1,
+  "max": 39.8,
+  "min": 26.5
+ },
+ "temp_c": {
+  "mean": 73.19,
+  "p95": 74.1,
+  "max": 75.2,
+  "min": 71.4
+ },
+ "pipelines": {
+  "camera": {
+   "hz": 30.01
+  },
+  "apriltag": {
+   "hz": 8.35,
+   "hit_rate": 1.0,
+   "hit_hz": 8.35
+  },
+  "yolo": {
+   "hz": 1.91,
+   "hit_rate": {
+    "water_barn": 1.0,
+    "toxic_fluid": 1.0
+   },
+   "other_class_rate": 0.0
+  },
+  "bar_counter": {
+   "hz": 1.92,
+   "msgs": 1725,
+   "expected_msgs": 1800,
+   "read_rate": 0.958,
+   "wrong_rate": 0.0,
+   "abstain_rate": 0.042,
+   "wrong_labels": {}
+  }
+ }
+}

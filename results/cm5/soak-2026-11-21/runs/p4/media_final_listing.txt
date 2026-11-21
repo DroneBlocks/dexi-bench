@@ -1,0 +1,7 @@
+total 194640
+drwxr-xr-x  2 root root     4096 Nov 21 11:32 .
+drwx------ 21 dexi dexi     4096 Nov 21 11:01 ..
+-rw-r--r--  1 root root 93782738 Nov 21 11:16 video_20261121_110619_360.mp4
+-rw-r--r--  1 root root  9660950 Nov 21 11:18 video_20261121_111712_288.mp4
+-rw-r--r--  1 root root 47762363 Nov 21 11:26 video_20261121_112143_048.mp4
+-rw-r--r--  1 root root 48088887 Nov 21 11:32 video_20261121_112700_259.mp4

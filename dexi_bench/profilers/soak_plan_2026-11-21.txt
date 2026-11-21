@@ -1,0 +1,31 @@
+# Phase 1: detection check, 10 min
+baseline@p1 600
+# Phase 2: baseline, 30 min
+baseline 1800
+# Phase 3: one change at a time, 15 min each; baseline repeats track room/thermal drift
+yolo_1hz
+yolo_threads1
+yolo_threads4
+bar_1hz
+bar_on_2hz_stream
+tag_5hz
+tag_decimate3
+tag_threads2
+baseline@2
+no_throttle_2hz
+cam_jpeg40
+cam_640x360
+cam_15fps
+no_rosbridge
+no_telemetry
+baseline@3
+no_containers
+no_extras
+journal_warning
+gov_schedutil
+gov_performance
+fastdds_shm_off
+dds_cyclone
+cam_yuyv
+cam_nv12
+baseline@4

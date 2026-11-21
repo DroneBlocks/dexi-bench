@@ -1,0 +1,1 @@
+AprilTag input throttle 5 Hz (from 10)
