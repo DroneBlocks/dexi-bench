@@ -1,1 +1,0 @@
-JPEG quality 40 (from 60)

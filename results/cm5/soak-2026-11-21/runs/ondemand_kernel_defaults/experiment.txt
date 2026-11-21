@@ -1,1 +1,0 @@
-ondemand with kernel-default tunables (up_threshold 95, sampling_rate 10000, sampling_down_factor 1) instead of the Pi OS boot values (50 / 100000 / 50)

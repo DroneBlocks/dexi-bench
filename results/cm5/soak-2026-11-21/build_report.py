@@ -23,6 +23,10 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 RUNS = HERE / "runs"
+if not RUNS.exists() and (HERE / "runs.tar.gz").exists():  # raw data ships as one archive
+    import tarfile
+    with tarfile.open(HERE / "runs.tar.gz") as t:
+        t.extractall(HERE)
 EXTRA = HERE / "extra.json"     # hand-written findings / phase-4 results
 
 BLUE = "#2a78d6"

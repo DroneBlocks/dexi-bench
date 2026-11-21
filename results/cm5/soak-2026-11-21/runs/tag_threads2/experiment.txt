@@ -1,1 +1,0 @@
-AprilTag detector.threads 2 (from 1)

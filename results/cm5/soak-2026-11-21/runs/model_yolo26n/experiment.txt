@@ -1,1 +1,0 @@
-Code overlay model_yolo26n: yolo26.onnx

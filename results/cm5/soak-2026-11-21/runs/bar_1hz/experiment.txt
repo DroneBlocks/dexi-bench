@@ -1,1 +1,0 @@
-Bar counter detection_frequency 1 Hz (from 2)

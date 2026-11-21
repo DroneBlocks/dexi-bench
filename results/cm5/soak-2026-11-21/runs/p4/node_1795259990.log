@@ -1,8 +1,0 @@
-[INFO] [launch]: All log files can be found below /root/.ros/log/2026-11-21-11-19-52-023980-dexi-0ceb-32841
-[INFO] [launch]: Default logging verbosity is set to INFO
-[INFO] [capture_media_node-1]: process started with pid [32858]
-[capture_media_node-1] [INFO] [1795259993.865468196] [dexi.capture_media]: capture_media ready: /home/dexi/dexi_media, http :8090, photo aux-off, video aux-off
-[capture_media_node-1] [INFO] [1795259994.644576993] [dexi.capture_media]: video_20261121_111954_636.mp4
-[capture_media_node-1] /home/dexi/ros2_jazzy/install/rclpy/lib/python3.11/site-packages/rclpy/service.py:78: RuntimeWarning: failed to send response (timeout): client will not receive response, at /home/dexi/ros2_jazzy/src/ros2/rmw_fastrtps/rmw_fastrtps_shared_cpp/src/rmw_response.cpp:153, at /home/dexi/ros2_jazzy/src/ros2/rcl/rcl/src/rcl/service.c:400
-[capture_media_node-1]   self.__service.service_send_response(response, header.request_id)
-[ERROR] [capture_media_node-1]: process has died [pid 32858, exit code -9, cmd '/home/dexi/dexi_ws/install/dexi_capture_media/lib/dexi_capture_media/capture_media_node --ros-args -r __node:=capture_media -r __ns:=/dexi --params-file /tmp/launch_params_hn63etpo'].
