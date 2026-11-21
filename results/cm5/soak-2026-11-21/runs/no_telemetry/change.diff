@@ -1,0 +1,75 @@
+--- /home/dexi/soak/runs/_pristine/dexi-config.yaml	2026-11-20 23:53:09.478539932 +0000
++++ /home/dexi/.dexi-config.yaml	2026-11-21 05:20:19.642940577 +0000
+@@ -1,66 +1,24 @@
+-# DEXI Shared Configuration (base)
+-#
+-# This file holds values that are identical across all DEXI hardware
+-# platforms. Per-platform overrides (e.g. camera resolution on Pi 5 vs
+-# CM4/CM5) live in dexi_config_<platform>.yaml next to this file.
+-#
+-# At runtime, scripts/start.bash detects the platform and looks up each
+-# parameter in this order:
+-#   1. ~/.dexi-config.yaml              (user override, optional)
+-#   2. dexi_config_<platform>.yaml      (per-platform overlay)
+-#   3. dexi_config.yaml                 (this file — shared base)
+-#   4. hardcoded default in start.bash
+-#
+-# Copy this file (or the matching dexi_config_<platform>.yaml) to
+-# /home/dexi/.dexi-config.yaml to customize.
+-
+ nodes:
+   apriltag:
+     enabled: true
+-  # tag_nav (AprilTag navigation behind /dexi/tag_nav/command, from dexi_apriltag)
+-  # is per airframe: the config file carries the camera mount offset. It is
+-  # intentionally omitted here so the value is not frozen into the seeded
+-  # ~/.dexi-config.yaml, where it would override the DEXI 5 platform configs that
+-  # turn it on. Same reasoning as gpio below. start.bash defaults to off.
+-  # telemetry (/dexi/telemetry, a 2 Hz JSON summary for dashboards) is on unless
+-  # nodes.telemetry.enabled is false.
+   camera:
+     enabled: true
+-    format: "XRGB8888"
++    format: XRGB8888
+     jpeg_quality: 60
+-    # width / height live in dexi_config_<platform>.yaml because they
+-    # depend on the camera hardware attached to each platform.
+-  # gpio (TCA9555 expander) is platform-specific: present on some carriers,
+-  # absent on others (e.g. CM5). It is intentionally omitted here so the
+-  # value isn't frozen into the seeded ~/.dexi-config.yaml; set
+-  # nodes.gpio.enabled in dexi_config_<platform>.yaml. start.bash defaults
+-  # to true when unset, preserving behavior on carriers that have the chip.
+   offboard:
+     enabled: true
+     keyboard_control: false
+   rosbridge:
+     enabled: true
+-  # servo (PCA9685) is platform-specific: the chip is on the DroneBlocks
+-  # Pi 5 hat and is absent from the CM5 and ARK carriers. Intentionally
+-  # omitted here so the value is not frozen into the seeded
+-  # ~/.dexi-config.yaml; set nodes.servo.enabled in
+-  # dexi_config_<platform>.yaml. Same reasoning as gpio above.
+-  # Object detection. Change to true and restart dexi.service to turn it on.
+-  # Which model runs, and how fast, is set per platform in
+-  # dexi_config_<platform>.yaml. Only `enabled` belongs here: it is the one
+-  # yolo key a user chooses, so it is the one worth seeding into
+-  # ~/.dexi-config.yaml.
+   yolo:
+     enabled: true
+-  # Bar counter (dexi_vision): reads the bar images on the AVR 2026 bridge cups
+-  # and publishes bars_1/2/3 on /bar_detections. Change to true and restart
+-  # dexi.service to turn it on.
+   tag_nav:
+     enabled: false
+-    config: "tag_nav_dexi5.yaml"
++    config: tag_nav_dexi5.yaml
+   bar_counter:
+     enabled: true
+-
++  telemetry:
++    enabled: false
+ system:
+   debug_mode: false
+-  log_level: "info"
+\ No newline at end of file
++  log_level: info

@@ -1,0 +1,3 @@
+ondemand
+Environment="HOME=/home/dexi"
+Environment=ROS_DOMAIN_ID=1

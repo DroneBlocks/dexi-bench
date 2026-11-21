@@ -1,0 +1,200 @@
+Nov 21 08:26:42 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:42 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:26:43 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249603.903456039] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:43 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      9
+Nov 21 08:26:43 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:43 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 08:26:44 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249604.891643095] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:44 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:26:44 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:44 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:26:45 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249605.891622923] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:45 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:26:45 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:45 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:26:46 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249606.891645733] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:46 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      9
+Nov 21 08:26:46 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:46 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 08:26:47 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249607.921568906] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:47 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:26:47 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 28
+Nov 21 08:26:47 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:26:48 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249608.921762344] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:48 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:26:48 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:48 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:26:49 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249609.891669772] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:49 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:26:49 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:49 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:26:50 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249610.899043673] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:50 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      9
+Nov 21 08:26:50 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:50 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 08:26:51 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249611.892144573] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:51 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:26:51 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:51 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:26:52 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249612.891638422] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:52 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:26:52 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:52 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:26:53 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249613.897853551] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:53 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      9
+Nov 21 08:26:53 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:53 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 08:26:54 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249614.891630521] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:54 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      7
+Nov 21 08:26:54 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:54 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           7
+Nov 21 08:26:55 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249615.891611756] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:55 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:26:55 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:55 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:26:56 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249616.891623102] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:56 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:26:56 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:56 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:26:57 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249617.891629114] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:57 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      9
+Nov 21 08:26:57 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:57 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 08:26:58 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249618.891651163] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:58 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:26:58 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:58 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:26:59 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249619.892066284] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:26:59 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:26:59 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:26:59 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:27:00 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249620.891723038] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:27:00 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:27:00 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:27:00 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:27:01 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249621.895166014] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:27:01 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      9
+Nov 21 08:27:01 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:27:01 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 08:27:02 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249622.891642914] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:27:02 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:27:02 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:27:02 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:27:03 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249623.894225301] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:27:03 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      9
+Nov 21 08:27:03 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:27:03 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 08:27:04 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249624.891633271] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:27:04 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:27:04 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:27:04 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:27:05 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249625.893256552] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:27:05 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:27:05 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:27:05 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:27:06 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249626.891626127] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:27:06 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      8
+Nov 21 08:27:06 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:27:06 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 08:27:07 dexi-0ceb start.bash[182684]: [apriltag_node-9] [WARN] [1795249627.891643842] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 08:27:07 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Image messages received:      9
+Nov 21 08:27:07 dexi-0ceb start.bash[182684]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 08:27:07 dexi-0ceb start.bash[182684]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 08:27:08 dexi-0ceb systemd[1]: Stopping dexi.service - DEXI ROS2 Bringup Service...
+Nov 21 08:27:09 dexi-0ceb systemd[1]: dexi.service: Deactivated successfully.
+Nov 21 08:27:09 dexi-0ceb systemd[1]: Stopped dexi.service - DEXI ROS2 Bringup Service.
+Nov 21 08:27:09 dexi-0ceb systemd[1]: dexi.service: Consumed 22min 22.612s CPU time.
+Nov 21 08:27:09 dexi-0ceb systemd[1]: Started dexi.service - DEXI ROS2 Bringup Service.
+Nov 21 08:27:10 dexi-0ceb start.bash[186914]: Platform from /etc/dexi-platform: cm5
+Nov 21 08:27:10 dexi-0ceb start.bash[186914]: Configuration loaded (platform=cm5): yolo=true, apriltags=true, bar_counter=true, tag_nav=false (tag_nav_dexi5.yaml), camera=true (768x432, NV12, q60), servos=false, gpio=false, offboard=true, keyboard_control=false, rosbridge=true, led_pin=12, telemetry=true
+Nov 21 08:27:10 dexi-0ceb start.bash[186914]: Detected CM5 hardware, launching dexi_bringup_cm5.launch.py
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [launch]: All log files can be found below /home/dexi/.ros/log/2026-11-21-08-27-11-537757-dexi-0ceb-187035
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [launch]: Default logging verbosity is set to INFO
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [launch.user]: dexi_yolo: avr_2026 -> avr2026n320.onnx (10 classes, 320x320, conf 0.45)
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [micro_ros_agent-1]: process started with pid [187038]
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [rosbridge_websocket-2]: process started with pid [187040]
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [platform_params_node-3]: process started with pid [187042]
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [rosapi_node-4]: process started with pid [187044]
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [led_service_pi5-5]: process started with pid [187046]
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [led_flight_mode_status-6]: process started with pid [187048]
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [camera_node-7]: process started with pid [187050]
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [throttle-8]: process started with pid [187054]
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [apriltag_node-9]: process started with pid [187056]
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [static_transform_publisher-10]: process started with pid [187059]
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [throttle-11]: process started with pid [187061]
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [dexi_yolo_node_onnx.py-12]: process started with pid [187068]
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [bar_counter_node.py-13]: process started with pid [187070]
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [px4_offboard_manager-14]: process started with pid [187077]
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [INFO] [telemetry_node-15]: process started with pid [187082]
+Nov 21 08:27:11 dexi-0ceb start.bash[187035]: [static_transform_publisher-10] [WARN] [1795249631.829396726] []: Old-style arguments are deprecated; see --help for new-style arguments
+Nov 21 08:27:12 dexi-0ceb start.bash[187035]: [static_transform_publisher-10] [INFO] [1795249632.214497882] [base_link_to_camera_tf]: Spinning until stopped - publishing transform
+Nov 21 08:27:12 dexi-0ceb start.bash[187035]: [static_transform_publisher-10] translation: ('0.000000', '0.000000', '0.000000')
+Nov 21 08:27:12 dexi-0ceb start.bash[187035]: [static_transform_publisher-10] rotation: ('0.000000', '0.707108', '0.000000', '0.707105')
+Nov 21 08:27:12 dexi-0ceb start.bash[187035]: [static_transform_publisher-10] from 'base_link' to 'camera'
+Nov 21 08:27:12 dexi-0ceb start.bash[187035]: [px4_offboard_manager-14] [INFO] [1795249632.273850686] [dexi.px4_offboard_manager]: Keyboard control enabled: false
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7] [9:04:08.880298001] [187050]  INFO Camera camera_manager.cpp:330 libcamera v0.5.2+99-bfd68f78
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7] [9:04:08.911387433] [187246]  INFO RPI pisp.cpp:720 libpisp version v1.2.1 981977ff21f3 29-04-2025 (14:13:50)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7] [9:04:08.930077466] [187246]  INFO IPAProxy ipa_proxy.cpp:180 Using tuning file /usr/share/libcamera/ipa/rpi/pisp/imx708.json
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7] [9:04:08.953500752] [187246]  INFO Camera camera_manager.cpp:220 Adding camera '/base/axi/pcie@120000/rp1/i2c@70000/imx708@1a' for pipeline handler rpi/pisp
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7] [9:04:08.953537715] [187246]  INFO RPI pisp.cpp:1179 Registered camera /base/axi/pcie@120000/rp1/i2c@70000/imx708@1a to CFE device /dev/media0 and ISP device /dev/media2 using PiSP variant BCM2712_D0
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7] [INFO] [1795249633.825025807] [cam0]:
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7] >> cameras:
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    0: imx708 (/base/axi/pcie@120000/rp1/i2c@70000/imx708@1a)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7] [WARN] [1795249633.825276824] [cam0]: no camera selected, using default: "/base/axi/pcie@120000/rp1/i2c@70000/imx708@1a"
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7] [WARN] [1795249633.825335861] [cam0]: set parameter 'camera' to silence this warning
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7] [INFO] [1795249633.830474279] [cam0]:
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7] >> stream formats:
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - R8 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - R16 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - MONO_PISP_COMP1 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - NV21 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - SBGGR8 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - SBGGR16 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - BGGR_PISP_COMP1 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - XBGR8888 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - BGR888 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - RGB888 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - XRGB8888 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - SGBRG16 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - GBRG_PISP_COMP1 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - SGRBG16 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - GRBG_PISP_COMP1 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - SRGGB16 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - RGGB_PISP_COMP1 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - BGR161616 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - RGB161616 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - SRGGB8 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - SGRBG8 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - SGBRG8 (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - YUYV (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]    - UYVY (32x32 - 4608x2592)
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7] terminate called after throwing an instance of 'std::runtime_error'
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [camera_node-7]   what():  unsupported pixel format "NV12"
+Nov 21 08:27:13 dexi-0ceb start.bash[187035]: [ERROR] [camera_node-7]: process has died [pid 187050, exit code -6, cmd '/home/dexi/dexi_ws/install/camera_ros/lib/camera_ros/camera_node --ros-args -r __node:=cam0 --params-file /tmp/launch_params_oapfrcdh -r image_raw:=/cam0/image_raw -r camera_info:=/cam0/camera_info'].
+Nov 21 08:27:14 dexi-0ceb start.bash[187035]: [platform_params_node-3] [INFO] [1795249634.022315675] [dexi_platform_params]: Platform: cm5, Keyboard control: False
+Nov 21 08:27:14 dexi-0ceb start.bash[187035]: [telemetry_node-15] [INFO] [1795249634.523639673] [telemetry]: 20 Hz position copy quiet; reading /fmu/out/vehicle_local_position
+Nov 21 08:27:14 dexi-0ceb start.bash[187035]: [led_service_pi5-5] [INFO] [1795249634.825713684] [dexi.led_service]: LED Service initialized successfully (led_count=78, brightness=0.2, driver=spi)
+Nov 21 08:27:15 dexi-0ceb start.bash[187035]: [rosbridge_websocket-2] [INFO] [1795249635.258880850] [rosbridge_websocket]: Rosbridge WebSocket server started on port 9090
+Nov 21 08:27:15 dexi-0ceb start.bash[187035]: [dexi_yolo_node_onnx.py-12] 2026-11-21 08:27:15.788086796 [W:onnxruntime:Default, telemetry_1ds.cc:600 operator()] Failed to persist telemetry device ID; using an in-memory identifier
+Nov 21 08:27:15 dexi-0ceb start.bash[187035]: [rosbridge_websocket-2] [INFO] [1795249635.903853790] [rosbridge_websocket]: Calling services in new thread
+Nov 21 08:27:15 dexi-0ceb start.bash[187035]: [rosbridge_websocket-2] [INFO] [1795249635.904918266] [rosbridge_websocket]: Sending action goals in new thread
+Nov 21 08:27:15 dexi-0ceb start.bash[187035]: [rosbridge_websocket-2] [INFO] [1795249635.908074935] [rosbridge_websocket]: Client connected. 1 clients total.
+Nov 21 08:27:15 dexi-0ceb start.bash[187035]: [rosbridge_websocket-2] [INFO] [1795249635.982309107] [rosbridge_websocket]: [Client e8e61ab2-6ac3-45d6-979f-d35c13e169ef] Subscribed to /dexi/telemetry
+Nov 21 08:27:16 dexi-0ceb start.bash[187035]: [bar_counter_node.py-13] [INFO] [1795249636.425004075] [bar_counter_node]: bar_counter_node publishing /bar_detections at 2.0 Hz
+Nov 21 08:27:16 dexi-0ceb start.bash[187035]: [dexi_yolo_node_onnx.py-12] [INFO] [1795249636.683000147] [dexi_yolo_onnx]: Loading ONNX model from /home/dexi/dexi_ws/install/dexi_yolo/share/dexi_yolo/models/avr2026n320.onnx...
+Nov 21 08:27:16 dexi-0ceb start.bash[187035]: [dexi_yolo_node_onnx.py-12] [INFO] [1795249636.735722282] [dexi_yolo_onnx]: Optimized ONNX model loaded successfully!
+Nov 21 08:27:16 dexi-0ceb start.bash[187035]: [dexi_yolo_node_onnx.py-12] [INFO] [1795249636.736584185] [dexi_yolo_onnx]: Input: images, Output: output0
+Nov 21 08:27:16 dexi-0ceb start.bash[187035]: [dexi_yolo_node_onnx.py-12] [INFO] [1795249636.737369977] [dexi_yolo_onnx]: Classes: ['wheat_barrel', 'water_barrel', 'gasoline', 'toxic_fluid', 'wheat_barn', 'water_barn', 'bridge_1line', 'bridge_2line', 'bridge_3line', 'blackout']
+Nov 21 08:27:16 dexi-0ceb start.bash[187035]: [dexi_yolo_node_onnx.py-12] [INFO] [1795249636.738135381] [dexi_yolo_onnx]: CPU threads: intra=2, inter=1
+Nov 21 08:27:16 dexi-0ceb start.bash[187035]: [dexi_yolo_node_onnx.py-12] [INFO] [1795249636.756809173] [dexi_yolo_onnx]: DEXI YOLO ONNX node initialized successfully!
+Nov 21 08:27:16 dexi-0ceb start.bash[187035]: [dexi_yolo_node_onnx.py-12] [INFO] [1795249636.757984056] [dexi_yolo_onnx]: Subscribing to: /cam0/image_raw/compressed
+Nov 21 08:27:16 dexi-0ceb start.bash[187035]: [dexi_yolo_node_onnx.py-12] [INFO] [1795249636.759042254] [dexi_yolo_onnx]: Publishing to: /yolo_detections
+Nov 21 08:27:16 dexi-0ceb start.bash[187035]: [dexi_yolo_node_onnx.py-12] [INFO] [1795249636.760087915] [dexi_yolo_onnx]: Detection frequency: 2.0 Hz
+Nov 21 08:27:16 dexi-0ceb start.bash[187035]: [dexi_yolo_node_onnx.py-12] [INFO] [1795249636.761165317] [dexi_yolo_onnx]: Confidence threshold: 0.45
+Nov 21 08:27:16 dexi-0ceb start.bash[187035]: [dexi_yolo_node_onnx.py-12] [INFO] [1795249636.762206071] [dexi_yolo_onnx]: NMS threshold: 0.4
+Nov 21 08:27:16 dexi-0ceb start.bash[187035]: [dexi_yolo_node_onnx.py-12] [INFO] [1795249636.763222417] [dexi_yolo_onnx]: Input size: 320x320
+Nov 21 08:27:16 dexi-0ceb start.bash[187035]: [dexi_yolo_node_onnx.py-12] [INFO] [1795249636.764203412] [dexi_yolo_onnx]: Preprocessing: Letterbox
+Nov 21 08:27:16 dexi-0ceb start.bash[187035]: [dexi_yolo_node_onnx.py-12] [INFO] [1795249636.765176037] [dexi_yolo_onnx]: CPU threads limited to: 2
+Nov 21 08:27:18 dexi-0ceb start.bash[187035]: [px4_offboard_manager-14] [INFO] [1795249638.705833235] [dexi.px4_offboard_manager]: Initial vehicle status received
+Nov 21 08:27:19 dexi-0ceb start.bash[187035]: [led_service_pi5-5] [INFO] [1795249639.053441639] [dexi.led_service]: Setting ring color to: cyan
+Nov 21 08:27:20 dexi-0ceb start.bash[187035]: [telemetry_node-15] [INFO] [1795249640.519165369] [telemetry]: 20 Hz position copy back; dropped the raw subscription

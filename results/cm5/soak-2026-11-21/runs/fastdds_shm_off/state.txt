@@ -1,0 +1,6 @@
+ondemand
+Environment="HOME=/home/dexi"
+Environment=ROS_DOMAIN_ID=1
+Environment=FASTDDS_BUILTIN_TRANSPORTS=UDPv4
+dexi-node-red
+dexi-droneblocks

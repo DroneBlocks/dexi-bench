@@ -1,0 +1,72 @@
+2026-11-21 00:18:14Z pristine copies taken in /home/dexi/soak/runs/_pristine (governor ondemand)
+2026-11-21 00:18:14Z === baseline@p1: Everything on, as configured for the soak (600s, warmup 180s)
+2026-11-21 00:31:20Z --- baseline@p1 done
+2026-11-21 00:31:20Z === baseline: Everything on, as configured for the soak (1800s, warmup 180s)
+2026-11-21 01:04:24Z --- baseline done
+2026-11-21 01:04:24Z === yolo_1hz: YOLO detection_frequency 1 Hz (from 2) (900s, warmup 180s)
+2026-11-21 01:22:28Z --- yolo_1hz done
+2026-11-21 01:22:28Z === yolo_threads1: YOLO onnxruntime num_threads 1 (from 2) (900s, warmup 180s)
+2026-11-21 01:42:02Z --- yolo_threads1 done
+2026-11-21 01:42:02Z === yolo_threads4: YOLO onnxruntime num_threads 4 (from 2) (900s, warmup 180s)
+2026-11-21 02:00:07Z --- yolo_threads4 done
+2026-11-21 02:00:07Z === bar_1hz: Bar counter detection_frequency 1 Hz (from 2) (900s, warmup 180s)
+2026-11-21 02:18:11Z --- bar_1hz done
+2026-11-21 02:18:11Z === bar_on_2hz_stream: Bar counter reads compressed_2hz instead of the 30 Hz stream (remap only) (900s, warmup 180s)
+2026-11-21 02:36:15Z --- bar_on_2hz_stream done
+2026-11-21 02:36:15Z === tag_5hz: AprilTag input throttle 5 Hz (from 10) (900s, warmup 180s)
+2026-11-21 02:54:18Z --- tag_5hz done
+2026-11-21 02:54:18Z === tag_decimate3: AprilTag detector.decimate 3 (from 2) (900s, warmup 180s)
+2026-11-21 03:12:23Z --- tag_decimate3 done
+2026-11-21 03:12:23Z === tag_threads2: AprilTag detector.threads 2 (from 1) (900s, warmup 180s)
+2026-11-21 03:30:28Z --- tag_threads2 done
+2026-11-21 03:30:28Z === baseline@2: Everything on, as configured for the soak (900s, warmup 180s)
+2026-11-21 03:48:32Z --- baseline@2 done
+2026-11-21 03:48:32Z === no_throttle_2hz: Remove the compressed_2hz throttle node (900s, warmup 180s)
+2026-11-21 03:51:33Z !!! no_throttle_2hz: dexi.service not active
+2026-11-21 04:06:35Z --- no_throttle_2hz done
+2026-11-21 04:06:35Z === cam_jpeg40: JPEG quality 40 (from 60) (900s, warmup 180s)
+2026-11-21 04:24:38Z --- cam_jpeg40 done
+2026-11-21 04:24:38Z === cam_640x360: Camera 640x360 (from 768x432) (900s, warmup 180s)
+2026-11-21 04:44:12Z --- cam_640x360 done
+2026-11-21 04:44:12Z === cam_15fps: Camera 15 fps (FrameDurationLimits 66.7 ms, from 30 fps) (900s, warmup 180s)
+2026-11-21 05:02:15Z --- cam_15fps done
+2026-11-21 05:02:15Z === no_rosbridge: rosbridge off (no web clients connected during the soak) (900s, warmup 180s)
+2026-11-21 05:20:19Z --- no_rosbridge done
+2026-11-21 05:20:19Z === no_telemetry: telemetry node off (900s, warmup 180s)
+2026-11-21 05:38:25Z --- no_telemetry done
+2026-11-21 05:38:25Z === baseline@3: Everything on, as configured for the soak (900s, warmup 180s)
+2026-11-21 05:57:59Z --- baseline@3 done
+2026-11-21 05:57:59Z === no_containers: Docker containers stopped (dexi-node-red, dexi-droneblocks) (900s, warmup 180s)
+2026-11-21 06:16:04Z --- no_containers done
+2026-11-21 06:16:04Z === no_extras: code-server, lttng-sessiond, mavlink2rest stopped (900s, warmup 180s)
+2026-11-21 06:34:10Z --- no_extras done
+2026-11-21 06:34:10Z === journal_warning: journald MaxLevelStore=warning (from debug) (900s, warmup 180s)
+2026-11-21 06:53:45Z --- journal_warning done
+2026-11-21 06:53:45Z === gov_schedutil: CPU governor schedutil (from ondemand) (900s, warmup 180s)
+2026-11-21 07:11:49Z --- gov_schedutil done
+2026-11-21 07:11:49Z === gov_performance: CPU governor performance (from ondemand) (900s, warmup 180s)
+2026-11-21 07:31:23Z --- gov_performance done
+2026-11-21 07:31:23Z === fastdds_shm_off: Fast DDS with shared-memory transport off (UDP only) (900s, warmup 180s)
+2026-11-21 07:49:28Z --- fastdds_shm_off done
+2026-11-21 07:49:28Z === dds_cyclone: RMW Cyclone DDS instead of Fast DDS (900s, warmup 180s)
+2026-11-21 08:09:02Z --- dds_cyclone done
+2026-11-21 08:09:02Z === cam_yuyv: Camera format YUYV instead of XRGB8888 (900s, warmup 180s)
+2026-11-21 08:27:08Z --- cam_yuyv done
+2026-11-21 08:27:08Z === cam_nv12: Camera format NV12 instead of XRGB8888 (900s, warmup 180s)
+2026-11-21 08:45:12Z --- cam_nv12 done
+2026-11-21 08:45:12Z === baseline@4: Everything on, as configured for the soak (900s, warmup 180s)
+2026-11-21 09:03:16Z --- baseline@4 done
+2026-11-21 09:03:17Z plan complete; pristine config restored
+2026-11-21 09:09:49Z === baseline@5: Everything on, as configured for the soak (900s, warmup 180s)
+2026-11-21 09:27:55Z --- baseline@5 done
+2026-11-21 09:27:55Z === no_throttle_2hz: Remove the compressed_2hz throttle node (900s, warmup 180s)
+2026-11-21 09:47:29Z --- no_throttle_2hz done
+2026-11-21 09:47:29Z === ondemand_kernel_defaults: ondemand with kernel-default tunables (up_threshold 95, sampling_rate 10000, sampling_down_factor 1) instead of the Pi OS boot values (50 / 100000 / 50) (900s, warmup 180s)
+2026-11-21 10:05:33Z --- ondemand_kernel_defaults done
+2026-11-21 10:05:33Z === yolo_threads1__cam_640x360__gov_schedutil: Combined: yolo_threads1 + cam_640x360 + gov_schedutil (900s, warmup 180s)
+2026-11-21 10:23:37Z --- yolo_threads1__cam_640x360__gov_schedutil done
+2026-11-21 10:23:37Z === yolo_threads1__cam_640x360__gov_schedutil__cam_15fps: Combined: yolo_threads1 + cam_640x360 + gov_schedutil + cam_15fps (900s, warmup 180s)
+2026-11-21 10:41:41Z --- yolo_threads1__cam_640x360__gov_schedutil__cam_15fps done
+2026-11-21 10:41:41Z === baseline@6: Everything on, as configured for the soak (900s, warmup 180s)
+2026-11-21 10:59:45Z --- baseline@6 done
+2026-11-21 10:59:46Z plan complete; pristine config restored

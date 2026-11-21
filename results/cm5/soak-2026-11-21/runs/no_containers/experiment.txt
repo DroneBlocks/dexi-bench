@@ -1,0 +1,1 @@
+Docker containers stopped (dexi-node-red, dexi-droneblocks)

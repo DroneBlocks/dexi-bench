@@ -1,0 +1,5 @@
+schedutil
+Environment="HOME=/home/dexi"
+Environment=ROS_DOMAIN_ID=1
+dexi-node-red
+dexi-droneblocks

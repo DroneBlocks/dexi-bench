@@ -1,0 +1,11 @@
+--- /home/dexi/soak/runs/_pristine/launch.py	2026-11-20 23:52:55.710658148 +0000
++++ /home/dexi/dexi_ws/install/dexi_bringup/share/dexi_bringup/launch/dexi_bringup_cm5.launch.py	2026-11-21 02:36:15.169001510 +0000
+@@ -150,7 +150,7 @@
+         package='topic_tools',
+         executable='throttle',
+         name='image_throttle_apriltag_node',
+-        arguments=['messages', '/cam0/image_raw/compressed', '10.0', '/cam0/image_raw/compressed_apriltag'],
++        arguments=['messages', '/cam0/image_raw/compressed', '5.0', '/cam0/image_raw/compressed_apriltag'],
+         condition=IfCondition(camera)
+     )
+     ld.add_action(image_throttle_apriltag_node)

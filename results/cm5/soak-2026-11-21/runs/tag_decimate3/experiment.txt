@@ -1,0 +1,1 @@
+AprilTag detector.decimate 3 (from 2)

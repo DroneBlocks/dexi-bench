@@ -113,8 +113,9 @@ EXPERIMENTS: Dict[str, Exp] = {
                   {}),
     # throttles
     "no_throttle_2hz": ("Remove the compressed_2hz throttle node",
-                        lambda: launch_sub("name='image_throttle_compressed_node',",
-                                           "name='image_throttle_compressed_node',\n        condition=IfCondition('false'),"),
+                        # the node already carries condition=IfCondition(camera); replace it, don't add a second
+                        lambda: launch_sub("'/cam0/image_raw/compressed_2hz'],\n        condition=IfCondition(camera)",
+                                           "'/cam0/image_raw/compressed_2hz'],\n        condition=IfCondition('false')"),
                         {}),
     "tag_5hz": ("AprilTag input throttle 5 Hz (from 10)",
                 lambda: launch_sub("'/cam0/image_raw/compressed', '10.0', '/cam0/image_raw/compressed_apriltag'",
@@ -156,6 +157,10 @@ EXPERIMENTS: Dict[str, Exp] = {
                       lambda: sh("for g in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo schedutil > $g; done"), {}),
     "gov_performance": ("CPU governor performance (from ondemand)",
                         lambda: sh("for g in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo performance > $g; done"), {}),
+    "ondemand_kernel_defaults": ("ondemand with kernel-default tunables (up_threshold 95, sampling_rate 10000, "
+                                 "sampling_down_factor 1) instead of the Pi OS boot values (50 / 100000 / 50)",
+                                 lambda: _ondemand_set({"up_threshold": "95", "sampling_rate": "10000",
+                                                        "sampling_down_factor": "1"}), {}),
     "dds_cyclone": ("RMW Cyclone DDS instead of Fast DDS",
                     lambda: dropin("Environment=RMW_IMPLEMENTATION=rmw_cyclonedds_cpp"),
                     {"RMW_IMPLEMENTATION": "rmw_cyclonedds_cpp"}),
@@ -168,6 +173,15 @@ EXPERIMENTS: Dict[str, Exp] = {
                                      "[Journal]\nMaxLevelStore=warning\n"),
                                  sh("systemctl restart systemd-journald")), {}),
 }
+
+
+ONDEMAND = Path("/sys/devices/system/cpu/cpufreq/ondemand")
+ONDEMAND_KEYS = ("up_threshold", "sampling_rate", "sampling_down_factor", "io_is_busy", "powersave_bias")
+
+
+def _ondemand_set(vals: Dict[str, str]) -> None:
+    for k, v in vals.items():
+        (ONDEMAND / k).write_text(str(v))
 
 
 def combo(*names: str) -> Exp:
@@ -190,6 +204,8 @@ def take_pristine(pdir: Path) -> None:
     shutil.copy2(LAUNCH, pdir / "launch.py")
     gov = Path("/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor").read_text().strip()
     (pdir / "governor").write_text(gov)
+    if ONDEMAND.exists():
+        (pdir / "ondemand.json").write_text(json.dumps({k: (ONDEMAND / k).read_text().strip() for k in ONDEMAND_KEYS}))
     (pdir / "done").write_text(datetime.now(timezone.utc).isoformat())
     log(f"pristine copies taken in {pdir} (governor {gov})")
 
@@ -201,6 +217,9 @@ def restore(pdir: Path) -> None:
     sh(f"chown dexi:dexi {LAUNCH}")
     gov = (pdir / "governor").read_text().strip()
     sh(f"for g in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo {gov} > $g; done")
+    # Re-selecting a governor resets its tunables to kernel defaults; put the boot values back.
+    if gov == "ondemand" and (pdir / "ondemand.json").exists() and ONDEMAND.exists():
+        _ondemand_set(json.loads((pdir / "ondemand.json").read_text()))
     if DROPIN.exists():
         DROPIN.unlink()
         sh("systemctl daemon-reload")
@@ -249,7 +268,8 @@ def run_one(name: str, exp: Exp, secs: int, warmup: int, runs: Path, pdir: Path)
     if sh("systemctl is-active dexi.service", check=False).strip() != "active":
         (rdir / "error.txt").write_text("dexi.service not active after warmup\n" +
                                         sh("journalctl -u dexi.service -n 80 --no-pager", check=False))
-        log(f"!!! {name}: dexi.service not active")
+        log(f"!!! {name}: dexi.service not active; not profiling")
+        return
     envs = " ".join(f"{k}={v}" for k, v in env.items())
     bar_hz = env.get("SOAK_BAR_HZ", "2.0")
     cmd = (f"env {envs} SOAK_EXTRA='--bar-hz {bar_hz}' {SOAKRUN} {name} {secs} \"{desc}\" "

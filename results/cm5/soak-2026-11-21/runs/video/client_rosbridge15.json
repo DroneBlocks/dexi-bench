@@ -1,0 +1,13 @@
+{
+ "mode": "rosbridge",
+ "throttle_ms": 66,
+ "topic": "/cam0/image_raw/compressed",
+ "secs": 600.0,
+ "frames": 9031,
+ "fps": 15.05,
+ "kbytes_per_s": 522.0,
+ "avg_frame_kb": 34.7,
+ "gap_ms_p50": 66.3,
+ "gap_ms_p95": 78.4,
+ "gap_ms_max": 144.7
+}

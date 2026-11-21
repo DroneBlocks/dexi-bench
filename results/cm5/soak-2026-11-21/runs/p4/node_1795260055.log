@@ -1,0 +1,9 @@
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-11-21-11-20-56-816533-dexi-0ceb-32997
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [capture_media_node-1]: process started with pid [33009]
+[capture_media_node-1] [INFO] [1795260058.080953244] [dexi.capture_media]: capture_media ready: /home/dexi/dexi_media, http :8090, photo aux-off, video aux-off
+[capture_media_node-1] [INFO] [1795260060.073287223] [dexi.capture_media]: video_20261121_112100_067.mp4
+[capture_media_node-1] [WARN] [1795260098.034369964] [dexi.capture_media]: recording failed: ffmpeg error
+[capture_media_node-1] [INFO] [1795260103.066214473] [dexi.capture_media]: video_20261121_112143_048.mp4
+[capture_media_node-1] [INFO] [1795260410.273352879] [dexi.capture_media]: video_20261121_112143_048.mp4 (307 s)
+[ERROR] [capture_media_node-1]: process has died [pid 33009, exit code -9, cmd '/home/dexi/dexi_ws/install/dexi_capture_media/lib/dexi_capture_media/capture_media_node --ros-args -r __node:=capture_media -r __ns:=/dexi --params-file /tmp/launch_params_4o809fz_'].

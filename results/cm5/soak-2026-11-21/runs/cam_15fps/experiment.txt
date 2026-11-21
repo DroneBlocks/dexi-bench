@@ -1,0 +1,1 @@
+Camera 15 fps (FrameDurationLimits 66.7 ms, from 30 fps)

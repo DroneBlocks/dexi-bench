@@ -1,0 +1,6 @@
+ondemand
+Environment="HOME=/home/dexi"
+Environment=ROS_DOMAIN_ID=1
+Environment=RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+dexi-node-red
+dexi-droneblocks

@@ -1,0 +1,42 @@
+{
+ "label": "no_rosbridge",
+ "cpu_pct": {
+  "mean": 31.75,
+  "p95": 35.0,
+  "max": 40.3,
+  "min": 26.1
+ },
+ "temp_c": {
+  "mean": 73.97,
+  "p95": 75.2,
+  "max": 75.7,
+  "min": 71.9
+ },
+ "pipelines": {
+  "camera": {
+   "hz": 30.0
+  },
+  "apriltag": {
+   "hz": 8.33,
+   "hit_rate": 1.0,
+   "hit_hz": 8.33
+  },
+  "yolo": {
+   "hz": 1.92,
+   "hit_rate": {
+    "water_barn": 1.0,
+    "toxic_fluid": 1.0
+   },
+   "other_class_rate": 0.0
+  },
+  "bar_counter": {
+   "hz": 1.92,
+   "msgs": 1725,
+   "expected_msgs": 1800,
+   "read_rate": 0.958,
+   "wrong_rate": 0.0,
+   "abstain_rate": 0.042,
+   "wrong_labels": {}
+  }
+ }
+}

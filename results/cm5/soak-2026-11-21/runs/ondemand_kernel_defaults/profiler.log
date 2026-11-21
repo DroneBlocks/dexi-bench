@@ -1,0 +1,42 @@
+{
+ "label": "ondemand_kernel_defaults",
+ "cpu_pct": {
+  "mean": 33.23,
+  "p95": 35.8,
+  "max": 40.9,
+  "min": 28.1
+ },
+ "temp_c": {
+  "mean": 69.6,
+  "p95": 70.8,
+  "max": 71.9,
+  "min": 68.1
+ },
+ "pipelines": {
+  "camera": {
+   "hz": 30.02
+  },
+  "apriltag": {
+   "hz": 8.3,
+   "hit_rate": 1.0,
+   "hit_hz": 8.3
+  },
+  "yolo": {
+   "hz": 1.92,
+   "hit_rate": {
+    "water_barn": 1.0,
+    "toxic_fluid": 1.0
+   },
+   "other_class_rate": 0.0
+  },
+  "bar_counter": {
+   "hz": 1.92,
+   "msgs": 1725,
+   "expected_msgs": 1800,
+   "read_rate": 0.958,
+   "wrong_rate": 0.0,
+   "abstain_rate": 0.042,
+   "wrong_labels": {}
+  }
+ }
+}
