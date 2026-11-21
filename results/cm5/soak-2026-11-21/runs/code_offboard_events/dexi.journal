@@ -1,0 +1,200 @@
+Nov 21 22:11:29 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299089.423351601] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:29 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:29 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:29 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:30 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299090.423412759] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:30 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:11:30 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:30 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:11:31 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299091.423450997] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:31 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:11:31 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:31 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:11:32 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299092.423264983] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:32 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:32 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:32 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:33 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299093.423353349] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:33 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:33 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:33 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:34 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299094.423322963] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:34 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:11:34 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:34 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:11:35 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299095.423293102] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:35 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:35 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:35 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:36 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299096.423461047] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:36 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:36 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:36 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:37 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299097.423339794] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:37 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:11:37 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:37 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:11:38 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299098.424190999] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:38 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:38 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:38 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:39 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299099.423533814] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:39 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:11:39 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:39 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:11:40 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299100.424075495] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:40 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:40 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 31
+Nov 21 22:11:40 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:41 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299101.423389881] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:41 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:11:41 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:41 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:11:42 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299102.423419612] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:42 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:42 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 29
+Nov 21 22:11:42 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:43 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299103.423751574] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:43 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:11:43 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 31
+Nov 21 22:11:43 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:11:44 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299104.423193353] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:44 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:44 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:44 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:45 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299105.423363978] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:45 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:11:45 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:45 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:11:46 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299106.423200645] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:46 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:46 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:46 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:47 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299107.423258321] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:47 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:47 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:47 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:48 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299108.423296060] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:48 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:48 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:48 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:49 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299109.423224417] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:49 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:11:49 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:49 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:11:50 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299110.423886693] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:50 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:50 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:50 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:51 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299111.423381507] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:51 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:51 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 29
+Nov 21 22:11:51 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:52 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299112.423587888] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:52 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:11:52 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 31
+Nov 21 22:11:52 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:11:53 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299113.423277403] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:53 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:53 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:53 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:54 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299114.423359501] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:54 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:54 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:54 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:55 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299115.423279644] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:55 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:55 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:55 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:56 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299116.430638187] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:56 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:11:56 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:56 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:11:57 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299117.430090694] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:57 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:11:57 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:57 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:11:58 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299118.423363172] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:58 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:11:58 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:58 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:11:59 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299119.430501718] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:11:59 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:11:59 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:11:59 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:12:00 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299120.423288098] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:00 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      7
+Nov 21 22:12:00 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:00 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           7
+Nov 21 22:12:01 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299121.430503585] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:01 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:12:01 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:01 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:12:02 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299122.423598573] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:02 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:12:02 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:02 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:12:03 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299123.423279143] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:03 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:12:03 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:03 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:12:04 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299124.423470113] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:04 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:12:04 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:04 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:12:05 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299125.434228446] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:05 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:12:05 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:05 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:12:06 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299126.442615680] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:06 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:12:06 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:06 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:12:07 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299127.423278578] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:07 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:12:07 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:07 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:12:08 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299128.423292334] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:08 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:12:08 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:08 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:12:09 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299129.423255542] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:09 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:12:09 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:09 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:12:10 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299130.423251553] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:10 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:12:10 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:10 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:12:11 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299131.423265350] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:11 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:12:11 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:11 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:12:12 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299132.426006077] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:12 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:12:12 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:12 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:12:13 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299133.427647378] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:13 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:12:13 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:13 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:12:14 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299134.423626784] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:14 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:12:14 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:14 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:12:15 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299135.429796385] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:15 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      9
+Nov 21 22:12:15 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:15 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           9
+Nov 21 22:12:16 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299136.423350643] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:16 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:12:16 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:16 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:12:17 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299137.423255945] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:17 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:12:17 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:17 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8
+Nov 21 22:12:18 dexi-0ceb start.bash[10733]: [apriltag_node-9] [WARN] [1795299138.423274736] [apriltag_node]: [image_transport] Topics '/cam0/image_raw/compressed_apriltag' and '/camera_info' do not appear to be synchronized. In the last 10s:
+Nov 21 22:12:18 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Image messages received:      8
+Nov 21 22:12:18 dexi-0ceb start.bash[10733]: [apriltag_node-9]         CameraInfo messages received: 30
+Nov 21 22:12:18 dexi-0ceb start.bash[10733]: [apriltag_node-9]         Synchronized pairs:           8

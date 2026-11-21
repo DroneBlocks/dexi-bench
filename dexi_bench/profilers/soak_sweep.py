@@ -216,6 +216,15 @@ OVERLAYS: Dict[str, List[Tuple[str, Path]]] = {
         ("dexi_yolo_node_onnx.py", INSTALL / "dexi_yolo/lib/dexi_yolo/dexi_yolo_node_onnx.py"),
         ("bar_counter_node.py", INSTALL / "dexi_vision/lib/dexi_vision/bar_counter_node.py"),
     ],
+    "model_yolo26n": [
+        ("yolo26.onnx", INSTALL / "dexi_yolo/share/dexi_yolo/models/avr2026n320.onnx"),
+    ],
+    "code_yolo_ncnn": [
+        ("dexi_yolo_node_onnx.py", INSTALL / "dexi_yolo/lib/dexi_yolo/dexi_yolo_node_onnx.py"),
+    ],
+    "code_offboard_events": [
+        ("px4_offboard_manager", INSTALL / "dexi_offboard/lib/dexi_offboard/px4_offboard_manager"),
+    ],
     "code_offboard_2threads": [
         ("px4_offboard_manager", INSTALL / "dexi_offboard/lib/dexi_offboard/px4_offboard_manager"),
     ],

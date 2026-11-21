@@ -94,3 +94,17 @@
 2026-11-21 17:57:57Z === baseline@c6: Everything on, as configured for the soak (900s, warmup 180s)
 2026-11-21 18:16:02Z --- baseline@c6 done
 2026-11-21 18:16:03Z plan complete; pristine config restored
+2026-11-21 19:21:17Z === model_yolo26n: Code overlay model_yolo26n: yolo26.onnx (900s, warmup 180s)
+2026-11-21 19:39:28Z --- model_yolo26n done
+2026-11-21 19:39:28Z === baseline@c7: Everything on, as configured for the soak (900s, warmup 180s)
+2026-11-21 19:57:33Z --- baseline@c7 done
+2026-11-21 19:57:36Z plan complete; pristine config restored
+2026-11-21 21:35:54Z === baseline@c8: Everything on, as configured for the soak (600s, warmup 120s)
+2026-11-21 21:48:03Z --- baseline@c8 done
+2026-11-21 21:48:03Z === code_yolo_ncnn: Code overlay code_yolo_ncnn: dexi_yolo_node_onnx.py (600s, warmup 120s)
+2026-11-21 22:00:09Z --- code_yolo_ncnn done
+2026-11-21 22:00:09Z === code_offboard_events: Code overlay code_offboard_events: px4_offboard_manager (600s, warmup 120s)
+2026-11-21 22:12:19Z --- code_offboard_events done
+2026-11-21 22:12:19Z === baseline@c9: Everything on, as configured for the soak (600s, warmup 120s)
+2026-11-21 22:24:26Z --- baseline@c9 done
+2026-11-21 22:24:27Z plan complete; pristine config restored
