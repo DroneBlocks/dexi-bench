@@ -80,6 +80,21 @@ TAG_PARAMS_ANCHOR = "'family': '36h11',  # Standard AprilTag family"
 BAR_NODE_ANCHOR = "executable='bar_counter_node.py',\n        name='bar_counter_node',"
 
 
+def _shared_stream(hz: float) -> None:
+    topic = f"/cam0/image_raw/compressed_{hz:g}hz"
+    NL = chr(10)
+    launch_sub("from launch_ros.actions import Node" + NL,
+               "from launch_ros.actions import Node, SetRemap" + NL + "from launch.actions import GroupAction" + NL)
+    launch_sub("    ld.add_action(image_throttle_apriltag_node)" + NL,
+               "    ld.add_action(image_throttle_apriltag_node)" + NL
+               + "    ld.add_action(Node(package='topic_tools', executable='throttle', name='image_throttle_shared_node'," + NL
+               + f"        arguments=['messages', '/cam0/image_raw/compressed', '{hz:g}', '{topic}']," + NL
+               + "        condition=IfCondition(camera)))" + NL)
+    launch_sub("    ld.add_action(yolo_launch)" + NL,
+               f"    ld.add_action(GroupAction([SetRemap('/cam0/image_raw/compressed', '{topic}'), yolo_launch]))" + NL)
+    launch_sub(BAR_NODE_ANCHOR, BAR_NODE_ANCHOR + NL + f"        remappings=[('/cam0/image_raw/compressed', '{topic}')],")
+
+
 def dropin(text: str) -> None:
     DROPIN_DIR.mkdir(parents=True, exist_ok=True)
     DROPIN.write_text("[Service]\n" + text + "\n")
@@ -135,6 +150,9 @@ EXPERIMENTS: Dict[str, Exp] = {
                       lambda: cfg_set(["nodes", "yolo", "num_threads"], 1), {}),
     "yolo_threads4": ("YOLO onnxruntime num_threads 4 (from 2)",
                       lambda: cfg_set(["nodes", "yolo", "num_threads"], 4), {}),
+    # shared lower-rate stream for the 2 Hz Python consumers (launch-only change)
+    "shared_6hz": ("YOLO and bar counter read one shared 6 Hz throttled stream instead of the 30 Hz stream "
+                   "(one extra C++ throttle; launch remaps only)", lambda: _shared_stream(6.0), {}),
     # bar counter
     "bar_1hz": ("Bar counter detection_frequency 1 Hz (from 2)",
                 lambda: launch_sub(BAR_NODE_ANCHOR, BAR_NODE_ANCHOR + "\n        parameters=[{'detection_frequency': 1.0}],"),
@@ -184,6 +202,51 @@ def _ondemand_set(vals: Dict[str, str]) -> None:
         (ONDEMAND / k).write_text(str(v))
 
 
+# Code overlays: experiment name -> [(patched file under OVERLAY_DIR/<name>/, installed target)].
+# The original target is backed up once into <runs>/_pristine/overlay/ and restore() always
+# copies it back, so a code change never outlives its run.
+OVERLAY_DIR = HOME / "soak/overlays"
+INSTALL = HOME / "dexi_ws/install"
+OVERLAYS: Dict[str, List[Tuple[str, Path]]] = {
+    "code_raw_subs": [
+        ("dexi_yolo_node_onnx.py", INSTALL / "dexi_yolo/lib/dexi_yolo/dexi_yolo_node_onnx.py"),
+        ("bar_counter_node.py", INSTALL / "dexi_vision/lib/dexi_vision/bar_counter_node.py"),
+    ],
+    "code_gate": [
+        ("dexi_yolo_node_onnx.py", INSTALL / "dexi_yolo/lib/dexi_yolo/dexi_yolo_node_onnx.py"),
+        ("bar_counter_node.py", INSTALL / "dexi_vision/lib/dexi_vision/bar_counter_node.py"),
+    ],
+    "code_offboard_2threads": [
+        ("px4_offboard_manager", INSTALL / "dexi_offboard/lib/dexi_offboard/px4_offboard_manager"),
+    ],
+}
+PDIR: List[Path] = []
+
+
+def _swap_in(src: Path, target: Path) -> None:
+    """Copy src over target via a temp file and rename, so it works while target is a running
+    binary (writing in place fails with ETXTBSY)."""
+    tmp = target.with_name(target.name + ".soak-tmp")
+    shutil.copy2(src, tmp)
+    os.replace(tmp, target)
+
+
+def _overlay(name: str) -> None:
+    bdir = PDIR[0] / "overlay"
+    bdir.mkdir(parents=True, exist_ok=True)
+    for fname, target in OVERLAYS[name]:
+        backup = bdir / (target.parent.parent.name + "__" + target.name)
+        if not backup.exists():
+            shutil.copy2(target, backup)
+        _swap_in(OVERLAY_DIR / name / fname, target)
+        sh(f"chown dexi:dexi {target}")
+
+
+for _n in OVERLAYS:
+    EXPERIMENTS[_n] = (f"Code overlay {_n}: " + ", ".join(f for f, _ in OVERLAYS[_n]),
+                       (lambda n=_n: _overlay(n)), {})
+
+
 def combo(*names: str) -> Exp:
     def apply() -> None:
         for n in names:
@@ -211,6 +274,13 @@ def take_pristine(pdir: Path) -> None:
 
 
 def restore(pdir: Path) -> None:
+    bdir = pdir / "overlay"
+    for files in OVERLAYS.values():
+        for _, target in files:
+            backup = bdir / (target.parent.parent.name + "__" + target.name)
+            if backup.exists():
+                _swap_in(backup, target)
+                sh(f"chown dexi:dexi {target}")
     shutil.copy2(pdir / "dexi-config.yaml", CFG)
     sh(f"chown dexi:dexi {CFG}")
     shutil.copy2(pdir / "launch.py", LAUNCH)
@@ -239,6 +309,11 @@ def snapshot(rdir: Path, desc: str, pdir: Path) -> None:
     rdir.mkdir(parents=True, exist_ok=True)
     (rdir / "experiment.txt").write_text(desc + "\n")
     diff = sh(f"diff -u {pdir/'dexi-config.yaml'} {CFG}; diff -u {pdir/'launch.py'} {LAUNCH}", check=False)
+    for files in OVERLAYS.values():
+        for _, target in files:
+            backup = pdir / "overlay" / (target.parent.parent.name + "__" + target.name)
+            if backup.exists():
+                diff += sh(f"diff -u {backup} {target}", check=False)
     (rdir / "change.diff").write_text(diff)
     extra = sh("cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor; "
                "systemctl cat dexi.service | grep -i environment; docker ps --format '{{.Names}}'", check=False)
@@ -296,6 +371,7 @@ def main(argv=None) -> int:
     LOG = args.runs / "sweep.log"
     pdir = args.runs / "_pristine"
     take_pristine(pdir)
+    PDIR.append(pdir)
     for line in args.plan.read_text().splitlines():
         line = line.strip()
         if not line or line.startswith("#"):

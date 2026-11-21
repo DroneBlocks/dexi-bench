@@ -70,3 +70,27 @@
 2026-11-21 10:41:41Z === baseline@6: Everything on, as configured for the soak (900s, warmup 180s)
 2026-11-21 10:59:45Z --- baseline@6 done
 2026-11-21 10:59:46Z plan complete; pristine config restored
+2026-11-21 13:25:55Z === baseline@c1: Everything on, as configured for the soak (900s, warmup 180s)
+2026-11-21 13:45:30Z --- baseline@c1 done
+2026-11-21 13:45:30Z === code_raw_subs: Code overlay code_raw_subs: dexi_yolo_node_onnx.py, bar_counter_node.py (900s, warmup 180s)
+2026-11-21 14:03:35Z --- code_raw_subs done
+2026-11-21 14:03:35Z === baseline@c2: Everything on, as configured for the soak (900s, warmup 180s)
+2026-11-21 14:21:40Z --- baseline@c2 done
+2026-11-21 14:21:41Z plan complete; pristine config restored
+2026-11-21 14:26:08Z === baseline@c3: Everything on, as configured for the soak (900s, warmup 180s)
+2026-11-21 16:07:10Z === baseline@c3: Everything on, as configured for the soak (900s, warmup 180s)
+2026-11-21 16:25:17Z --- baseline@c3 done
+2026-11-21 16:25:17Z === shared_6hz: YOLO and bar counter read one shared 6 Hz throttled stream instead of the 30 Hz stream (one extra C++ throttle; launch remaps only) (900s, warmup 180s)
+2026-11-21 16:43:23Z --- shared_6hz done
+2026-11-21 16:43:23Z === code_offboard_2threads: Code overlay code_offboard_2threads: px4_offboard_manager (900s, warmup 180s)
+2026-11-21 17:01:29Z --- code_offboard_2threads done
+2026-11-21 17:01:29Z === baseline@c4: Everything on, as configured for the soak (900s, warmup 180s)
+2026-11-21 17:19:33Z --- baseline@c4 done
+2026-11-21 17:19:34Z plan complete; pristine config restored
+2026-11-21 17:21:47Z === baseline@c5: Everything on, as configured for the soak (900s, warmup 180s)
+2026-11-21 17:39:52Z --- baseline@c5 done
+2026-11-21 17:39:52Z === shared_6hz__code_gate: Combined: shared_6hz + code_gate (900s, warmup 180s)
+2026-11-21 17:57:57Z --- shared_6hz__code_gate done
+2026-11-21 17:57:57Z === baseline@c6: Everything on, as configured for the soak (900s, warmup 180s)
+2026-11-21 18:16:02Z --- baseline@c6 done
+2026-11-21 18:16:03Z plan complete; pristine config restored

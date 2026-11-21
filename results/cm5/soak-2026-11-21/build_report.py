@@ -316,7 +316,7 @@ def build():
                          f"<td>{r['pipelines']['apriltag']['hz']:.2f}</td><td>{r['pipelines']['bar_counter']['read_rate']*100:.1f}%</td></tr>")
         parts.append("</table>")
 
-    for sec in ("bar_html", "capture_html", "video_html", "findings_html", "restore_html", "method_html"):
+    for sec in ("bar_html", "capture_html", "video_html", "findings_html", "restore_html", "method_html", "code_html"):
         if extra.get(sec):
             parts.append(extra[sec])
     parts.append("</body></html>")
