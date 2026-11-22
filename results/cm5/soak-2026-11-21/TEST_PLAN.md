@@ -1,3 +1,31 @@
+# FASTEST PATH: flash the v0.25-cpu1 test image
+
+Image (built 2026-11-22 00:06 UTC, Hetzner, verify-image 89/89 PASS):
+https://pub-7efc16585b2a4b5ab550489e8d8d5b33.r2.dev/v0.25-cpu1/dexi_raspberry_pi_os_cm5.img.zip
+Built from `integ/v0.25-cpu` branches (nothing merged): dexi_bringup 5027482 (off rc/v0.25), dexi_yolo ff3c7f8,
+dexi_vision d48d284, dexi_offboard fe0b662, dexi-os integ/v0.25-cpu. Login password: droneblocks.
+
+After flashing and first boot, check:
+- `cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor` -> `schedutil`
+- turn on YOLO + bar counter in `~/.dexi-config.yaml` (tag_nav off), `sudo systemctl restart dexi.service`
+- `journalctl -u dexi.service | grep -i ncnn` -> `NCNN backend: .../avr2026n320_ncnn_model/model.ncnn (1 threads)`
+  (`NCNN backend unavailable ... using onnxruntime` means it fell back)
+- `ros2 node list` shows `image_throttle_detector_node`, not `image_throttle_compressed_node`
+- YOLO and bar counter ~2.0 Hz; AprilTag ~8.4 Hz
+
+Measure (same targets, ~1.1 m, desk fan): copy the profiler from dexi-bench (`dexi_bench/` + `dexi_bench/profilers/soakrun.sh`
+to `~/soak/`), then `sudo ~/soak/soakrun.sh image_v025cpu1 1800 "v0.25-cpu1"`.
+Expected vs the v0.24-rc2 baseline (33% CPU, ~74 C): ~23-24% busy-equivalent CPU, ~61-64 C. Estimate from separate runs.
+
+**Offboard EventsExecutor (dexi_offboard#27) has not run a flight command.** SITL or props-off bench test before any flight.
+
+To go back on any piece: `nodes.yolo.backend: onnx` in ~/.dexi-config.yaml; governor
+`echo ondemand | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor` (or drop the cmdline entry).
+
+---
+
+# Building the PRs on an existing image instead
+
 # Build and test plan: DEXI-3 CPU/thermal PRs (for 2026-11-22)
 
 Board: dexi-0ceb, 192.168.68.61, `ssh -i C:\Users\denni\.ssh\dexi_bench dexi@192.168.68.61`.
