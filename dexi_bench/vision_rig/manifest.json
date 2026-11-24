@@ -4,7 +4,7 @@
     "file": "bars_rounded_bridge_red_1line.png",
     "group": "bars_rounded",
     "expect": {
-      "yolo": "bridge_1line",
+      "yolo": null,
       "bars": "bars_1",
       "tag": null
     },
@@ -15,7 +15,7 @@
     "file": "bars_rounded_bridge_green_2line.png",
     "group": "bars_rounded",
     "expect": {
-      "yolo": "bridge_2line",
+      "yolo": null,
       "bars": "bars_2",
       "tag": null
     },
@@ -26,7 +26,7 @@
     "file": "bars_rounded_bridge_blue_3line.png",
     "group": "bars_rounded",
     "expect": {
-      "yolo": "bridge_3line",
+      "yolo": null,
       "bars": "bars_3",
       "tag": null
     },
@@ -59,7 +59,7 @@
     "file": "bars_square_1.png",
     "group": "bars_square",
     "expect": {
-      "yolo": "bridge_1line",
+      "yolo": null,
       "bars": "bars_1",
       "tag": null
     },
@@ -70,7 +70,7 @@
     "file": "bars_square_2.png",
     "group": "bars_square",
     "expect": {
-      "yolo": "bridge_2line",
+      "yolo": null,
       "bars": "bars_2",
       "tag": null
     },
@@ -81,7 +81,7 @@
     "file": "bars_square_3.png",
     "group": "bars_square",
     "expect": {
-      "yolo": "bridge_3line",
+      "yolo": null,
       "bars": "bars_3",
       "tag": null
     },

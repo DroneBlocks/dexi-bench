@@ -69,8 +69,8 @@ def build(assets: Path) -> list:
     def add(name, group, yolo=None, bars=None, tag=None, note=""):
         # v0.25 behaviour: YOLO never publishes blackout (profile exclude list) and the
         # bar counter does not publish bars_0 (publish_bars_0 off), so both stay silent.
-        if yolo == "blackout":
-            yolo = None
+        if yolo == "blackout" or (yolo or "").startswith("bridge_"):
+            yolo = None   # avr_2026 excludes blackout and bridges (the bar counter owns bridges)
         if bars == "bars_0":
             bars = None
         items.append({"id": len(items), "file": name, "group": group,
