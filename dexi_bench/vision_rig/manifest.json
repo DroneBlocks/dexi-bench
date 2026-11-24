@@ -1,0 +1,321 @@
+[
+  {
+    "id": 0,
+    "file": "bars_rounded_bridge_red_1line.png",
+    "group": "bars_rounded",
+    "expect": {
+      "yolo": null,
+      "bars": "bars_1",
+      "tag": null
+    },
+    "note": ""
+  },
+  {
+    "id": 1,
+    "file": "bars_rounded_bridge_green_2line.png",
+    "group": "bars_rounded",
+    "expect": {
+      "yolo": null,
+      "bars": "bars_2",
+      "tag": null
+    },
+    "note": ""
+  },
+  {
+    "id": 2,
+    "file": "bars_rounded_bridge_blue_3line.png",
+    "group": "bars_rounded",
+    "expect": {
+      "yolo": null,
+      "bars": "bars_3",
+      "tag": null
+    },
+    "note": ""
+  },
+  {
+    "id": 3,
+    "file": "bars_rounded_bridge_blackout.png",
+    "group": "bars_rounded",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": null
+    },
+    "note": ""
+  },
+  {
+    "id": 4,
+    "file": "bars_square_0.png",
+    "group": "bars_square",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": null
+    },
+    "note": "YOLO was trained on rounded art; its square-end result is informational"
+  },
+  {
+    "id": 5,
+    "file": "bars_square_1.png",
+    "group": "bars_square",
+    "expect": {
+      "yolo": null,
+      "bars": "bars_1",
+      "tag": null
+    },
+    "note": "YOLO was trained on rounded art; its square-end result is informational"
+  },
+  {
+    "id": 6,
+    "file": "bars_square_2.png",
+    "group": "bars_square",
+    "expect": {
+      "yolo": null,
+      "bars": "bars_2",
+      "tag": null
+    },
+    "note": "YOLO was trained on rounded art; its square-end result is informational"
+  },
+  {
+    "id": 7,
+    "file": "bars_square_3.png",
+    "group": "bars_square",
+    "expect": {
+      "yolo": null,
+      "bars": "bars_3",
+      "tag": null
+    },
+    "note": "YOLO was trained on rounded art; its square-end result is informational"
+  },
+  {
+    "id": 8,
+    "file": "yolo_barrel_water.png",
+    "group": "yolo",
+    "expect": {
+      "yolo": "water_barrel",
+      "bars": null,
+      "tag": null
+    },
+    "note": ""
+  },
+  {
+    "id": 9,
+    "file": "yolo_barrel_wheat.png",
+    "group": "yolo",
+    "expect": {
+      "yolo": "wheat_barrel",
+      "bars": null,
+      "tag": null
+    },
+    "note": ""
+  },
+  {
+    "id": 10,
+    "file": "yolo_barrel_gasoline.png",
+    "group": "yolo",
+    "expect": {
+      "yolo": "gasoline",
+      "bars": null,
+      "tag": null
+    },
+    "note": ""
+  },
+  {
+    "id": 11,
+    "file": "yolo_barrel_toxic.png",
+    "group": "yolo",
+    "expect": {
+      "yolo": "toxic_fluid",
+      "bars": null,
+      "tag": null
+    },
+    "note": ""
+  },
+  {
+    "id": 12,
+    "file": "yolo_barrel_blackout.png",
+    "group": "yolo",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": null
+    },
+    "note": ""
+  },
+  {
+    "id": 13,
+    "file": "yolo_barn_water.png",
+    "group": "yolo",
+    "expect": {
+      "yolo": "water_barn",
+      "bars": null,
+      "tag": null
+    },
+    "note": ""
+  },
+  {
+    "id": 14,
+    "file": "yolo_barn_wheat.png",
+    "group": "yolo",
+    "expect": {
+      "yolo": "wheat_barn",
+      "bars": null,
+      "tag": null
+    },
+    "note": ""
+  },
+  {
+    "id": 15,
+    "file": "yolo_barn_blackout.png",
+    "group": "yolo",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": null
+    },
+    "note": ""
+  },
+  {
+    "id": 16,
+    "file": "apriltag_id0.png",
+    "group": "apriltag",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": 0
+    },
+    "note": "tag fills ~81% of the 7 in target; set the detector size to the on-screen black square"
+  },
+  {
+    "id": 17,
+    "file": "apriltag_id1.png",
+    "group": "apriltag",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": 1
+    },
+    "note": "tag fills ~81% of the 7 in target; set the detector size to the on-screen black square"
+  },
+  {
+    "id": 18,
+    "file": "apriltag_id2.png",
+    "group": "apriltag",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": 2
+    },
+    "note": "tag fills ~81% of the 7 in target; set the detector size to the on-screen black square"
+  },
+  {
+    "id": 19,
+    "file": "apriltag_id3.png",
+    "group": "apriltag",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": 3
+    },
+    "note": "tag fills ~81% of the 7 in target; set the detector size to the on-screen black square"
+  },
+  {
+    "id": 20,
+    "file": "apriltag_id4.png",
+    "group": "apriltag",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": 4
+    },
+    "note": "tag fills ~81% of the 7 in target; set the detector size to the on-screen black square"
+  },
+  {
+    "id": 21,
+    "file": "apriltag_id5.png",
+    "group": "apriltag",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": 5
+    },
+    "note": "tag fills ~81% of the 7 in target; set the detector size to the on-screen black square"
+  },
+  {
+    "id": 22,
+    "file": "apriltag_id6.png",
+    "group": "apriltag",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": 6
+    },
+    "note": "tag fills ~81% of the 7 in target; set the detector size to the on-screen black square"
+  },
+  {
+    "id": 23,
+    "file": "negative_white.png",
+    "group": "negative",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": null
+    },
+    "note": ""
+  },
+  {
+    "id": 24,
+    "file": "negative_808080.png",
+    "group": "negative",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": null
+    },
+    "note": ""
+  },
+  {
+    "id": 25,
+    "file": "negative_rvr_blue.png",
+    "group": "negative",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": null
+    },
+    "note": "RVR floor square: not a DEXI detector class"
+  },
+  {
+    "id": 26,
+    "file": "negative_rvr_green.png",
+    "group": "negative",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": null
+    },
+    "note": "RVR floor square: not a DEXI detector class"
+  },
+  {
+    "id": 27,
+    "file": "negative_rvr_red.png",
+    "group": "negative",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": null
+    },
+    "note": "RVR floor square: not a DEXI detector class"
+  },
+  {
+    "id": 28,
+    "file": "negative_rvr_yellow.png",
+    "group": "negative",
+    "expect": {
+      "yolo": null,
+      "bars": null,
+      "tag": null
+    },
+    "note": "RVR floor square: not a DEXI detector class"
+  }
+]
