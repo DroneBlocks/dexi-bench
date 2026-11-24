@@ -8,12 +8,18 @@ The page polls /api/state and shows whatever image the server says, so a script
 previous, long-press = toggle the info overlay (hidden by default so text never
 reaches the camera).
 
+It loops on its own (every DEFAULT_INTERVAL s). Any show/next/prev command holds
+the screen for ?hold= seconds (default 30); when no command arrives for that long,
+looping resumes, so a stopped or crashed script can never leave the screen frozen.
+A script that drives the sequence (score.py) just keeps sending commands.
+
 API
-  GET  /api/state                 current item, mode, interval
-  POST /api/show/{id}             show item id
-  POST /api/next | /api/prev
-  POST /api/auto?interval=5       auto-advance every N s (interval=0 stops)
-  GET  /api/manifest              all items with expectations
+  GET  /api/state                          current item, interval, hold
+  POST /api/show/{id}?hold=30              show item id and hold it
+  POST /api/next?hold=30 | /api/prev?hold=30
+  POST /api/auto?interval=10               loop interval in s (0 = stop looping)
+  GET  /api/manifest                       all items with expectations
+  GET  /control                            control page (thumbnails, prev/next, loop)
 """
 
 from __future__ import annotations
@@ -28,13 +34,17 @@ from fastapi.responses import FileResponse, HTMLResponse
 
 HERE = Path(__file__).parent
 MANIFEST = json.loads((HERE / "manifest.json").read_text())
-STATE = {"index": 0, "interval": 0.0, "changed_at": time.time(), "seq": 0}
+DEFAULT_INTERVAL = 10.0
+DEFAULT_HOLD = 30.0
+STATE = {"index": 0, "interval": DEFAULT_INTERVAL, "changed_at": time.time(), "seq": 0, "hold_until": 0.0}
 LOCK = threading.Lock()
 app = FastAPI(title="DEXI vision rig")
 
 
-def _set(i: int) -> dict:
+def _set(i: int, hold: float = 0.0) -> dict:
     with LOCK:
+        if hold > 0:
+            STATE["hold_until"] = time.time() + hold
         STATE["index"] = i % len(MANIFEST)
         STATE["changed_at"] = time.time()
         STATE["seq"] += 1
@@ -44,14 +54,16 @@ def _set(i: int) -> dict:
 def _state() -> dict:
     it = MANIFEST[STATE["index"]]
     return {"index": STATE["index"], "count": len(MANIFEST), "item": it,
-            "interval": STATE["interval"], "changed_at": STATE["changed_at"], "seq": STATE["seq"]}
+            "interval": STATE["interval"], "changed_at": STATE["changed_at"], "seq": STATE["seq"],
+            "held_for": max(0.0, round(STATE["hold_until"] - time.time(), 1))}
 
 
 def _auto_loop() -> None:
     while True:
         time.sleep(0.2)
         iv = STATE["interval"]
-        if iv > 0 and time.time() - STATE["changed_at"] >= iv:
+        now = time.time()
+        if iv > 0 and now >= STATE["hold_until"] and now - STATE["changed_at"] >= iv:
             _set(STATE["index"] + 1)
 
 
@@ -70,27 +82,28 @@ def manifest():
 
 
 @app.post("/api/show/{i}")
-def show(i: int):
+def show(i: int, hold: float = DEFAULT_HOLD):
     if not 0 <= i < len(MANIFEST):
         raise HTTPException(404, "no such item")
-    return _set(i)
+    return _set(i, hold)
 
 
 @app.post("/api/next")
-def nxt():
-    return _set(STATE["index"] + 1)
+def nxt(hold: float = DEFAULT_HOLD):
+    return _set(STATE["index"] + 1, hold)
 
 
 @app.post("/api/prev")
-def prev():
-    return _set(STATE["index"] - 1)
+def prev(hold: float = DEFAULT_HOLD):
+    return _set(STATE["index"] - 1, hold)
 
 
 @app.post("/api/auto")
-def auto(interval: float = 5.0):
+def auto(interval: float = DEFAULT_INTERVAL):
     with LOCK:
         STATE["interval"] = max(0.0, interval)
         STATE["changed_at"] = time.time()
+        STATE["hold_until"] = 0.0
         return _state()
 
 
@@ -139,3 +152,45 @@ poll();
 @app.get("/", response_class=HTMLResponse)
 def page():
     return PAGE
+
+
+CONTROL = """<!doctype html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vision rig control</title>
+<style>
+body{font:15px -apple-system,Segoe UI,sans-serif;margin:12px;background:#f6f6f4;color:#111}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+button{font-size:15px;padding:8px 14px;border-radius:8px;border:1px solid #bbb;background:#fff}
+#now{font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
+.cell{background:#fff;border:2px solid #ddd;border-radius:8px;padding:4px;text-align:center;font-size:11px;cursor:pointer}
+.cell.on{border-color:#2a78d6}
+.cell img{width:100%;aspect-ratio:1;object-fit:contain}
+</style></head><body>
+<div class="bar"><button onclick="go('/api/prev?hold=600')">&larr; Prev</button>
+<button onclick="go('/api/next?hold=600')">Next &rarr;</button>
+<span>Loop every <input id="iv" type="number" value="10" min="0" style="width:4em"> s</span>
+<button onclick="go('/api/auto?interval='+document.getElementById('iv').value)">Loop</button>
+<button onclick="go('/api/auto?interval=0')">Stop loop</button></div>
+<div id="now"></div><div class="grid" id="grid"></div>
+<script>
+async function go(u){await fetch(u,{method:'POST'});tick();}
+async function load(){
+  const m=await (await fetch('/api/manifest')).json();
+  document.getElementById('grid').innerHTML=m.map(it=>
+    `<div class="cell" id="c${it.id}" onclick="go('/api/show/${it.id}?hold=600')"><img src="/img/${encodeURIComponent(it.file)}" loading="lazy"><div>${it.id}: ${it.file.replace('.png','')}</div></div>`).join('');
+  tick();
+}
+async function tick(){
+  const s=await (await fetch('/api/state',{cache:'no-store'})).json();
+  document.getElementById('now').textContent=`Showing ${s.index}: ${s.item.file}  |  `+
+    (s.held_for>0?`held ${Math.round(s.held_for)} s more`:(s.interval>0?`looping every ${s.interval} s`:'loop stopped'));
+  document.querySelectorAll('.cell').forEach(c=>c.classList.toggle('on',c.id==='c'+s.index));
+}
+load(); setInterval(tick,1000);
+</script></body></html>"""
+
+
+@app.get("/control", response_class=HTMLResponse)
+def control():
+    return CONTROL

@@ -185,7 +185,8 @@ def main():
     groups = set(g for g in a.groups.split(",") if g)
     items = [it for it in manifest if not groups or it["group"] in groups]
     ssh = ["ssh", "-o", "BatchMode=yes", "-i", a.key, f"dexi@{a.drone}"]
-    api(a.server, "/api/auto?interval=0")
+    # No need to stop the loop: every show command holds the screen (server default
+    # hold 30 s), and the server goes back to looping once this script stops.
     lis = Listener(ssh)
     if not lis.ready.wait(30):
         raise SystemExit("drone listener did not start (ssh / ROS environment?)")
