@@ -26,7 +26,7 @@ import subprocess
 import threading
 import time
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).parent
@@ -81,7 +81,8 @@ def judge(item, msgs, ignore_yolo):
             share[lab] += 1
     shares = {k: round(v / len(y), 2) for k, v in share.items()} if y else {}
     if not y:
-        ok = None
+        # dexi_yolo publishes only when it detects something, so silence is a real answer
+        ok = exp["yolo"] is None
     elif exp["yolo"]:
         others = [v for k, v in shares.items() if k != exp["yolo"]]
         ok = shares.get(exp["yolo"], 0) >= 0.5 and all(v <= 0.2 for v in others)
@@ -110,6 +111,62 @@ def judge(item, msgs, ignore_yolo):
     return res
 
 
+def loop(a, items, lis):
+    """Repeat passes until --hours elapses. Appends every item result to log.csv and
+    rewrites summary.md (per-image pass rates across all passes) after every pass."""
+    out = a.out / ("loop_" + datetime.now().strftime("%Y%m%d_%H%M%S"))
+    out.mkdir(parents=True, exist_ok=True)
+    log = out / "log.csv"
+    with open(log, "w", newline="") as f:
+        csv.writer(f).writerow(["utc", "pass", "id", "file", "group", "yolo_ok", "yolo_shares",
+                                "bars_ok", "bar_labels", "tag_ok", "tag_ids"])
+    stats = collections.defaultdict(lambda: collections.Counter())
+    end = time.time() + a.hours * 3600
+    n = 0
+    valid_n = 0
+    while time.time() < end:
+        n += 1
+        if lis.p.poll() is not None:
+            raise SystemExit("drone listener exited (drone rebooted or ssh dropped)")
+        results = []
+        for it in items:
+            api(a.server, f"/api/show/{it['id']}")
+            time.sleep(a.settle)
+            t0 = time.time()
+            time.sleep(a.dwell)
+            results.append((it, judge(it, lis.window(t0, time.time()), set(x for x in a.ignore_yolo.split(",") if x))))
+        # Display check: if the AprilTags were not all seen, the iPad was asleep, dark or
+        # moved; drop the pass instead of scoring a blank screen.
+        tag_items = [r for it, r in results if it["group"] == "apriltag"]
+        valid = bool(tag_items) and all(r["tag"]["ok"] for r in tag_items)
+        with open(out / "passes.csv", "a", newline="") as f:
+            csv.writer(f).writerow([datetime.now(timezone.utc).isoformat(timespec="seconds"), n, valid,
+                                    sum(1 for r in tag_items if r["tag"]["ok"]), len(tag_items)])
+        if not valid:
+            print(f"pass {n} INVALID (display check: {sum(1 for r in tag_items if r['tag']['ok'])}/{len(tag_items)} tags seen)", flush=True)
+            continue
+        valid_n += 1
+        for it, r in results:
+            with open(log, "a", newline="") as f:
+                csv.writer(f).writerow([datetime.now(timezone.utc).isoformat(timespec="seconds"), n, it["id"], it["file"],
+                                        it["group"], r["yolo"]["ok"], json.dumps(r["yolo"]["shares"]),
+                                        r["bars"]["ok"], json.dumps(r["bars"]["labels"]), r["tag"]["ok"],
+                                        json.dumps(r["tag"]["ids"])])
+            for k in ("yolo", "bars", "tag"):
+                stats[(it["id"], it["file"])][(k, r[k]["ok"])] += 1
+        lines = [f"# Vision rig loop {out.name}", "", f"{valid_n} valid passes of {n}, {len(items)} images per pass, "
+                 f"updated {datetime.now(timezone.utc).isoformat(timespec='seconds')}Z", "",
+                 "| # | image | YOLO pass | bars pass | tag pass |", "|---|---|---|---|---|"]
+        for (i, fn), c in sorted(stats.items()):
+            cell = []
+            for k in ("yolo", "bars", "tag"):
+                p_, f_ = c[(k, True)], c[(k, False)]
+                cell.append("n/a" if p_ + f_ == 0 else (f"{p_}/{p_ + f_}" + (" **" if f_ else "")))
+            lines.append(f"| {i} | {fn} | {cell[0]} | {cell[1]} | {cell[2]} |")
+        (out / "summary.md").write_text(chr(10).join(lines) + chr(10))
+        print(f"pass {n} done -> {out}", flush=True)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--drone", default="192.168.68.63")
@@ -120,6 +177,8 @@ def main():
     ap.add_argument("--groups", default="", help="comma list; empty = all")
     ap.add_argument("--ignore-yolo", default="", help="YOLO classes to leave out of scoring")
     ap.add_argument("--out", type=Path, default=Path("results/vision_rig"))
+    ap.add_argument("--hours", type=float, default=0.0,
+                    help="loop mode: repeat passes for this long, appending to <out>/loop_<stamp>/")
     a = ap.parse_args()
 
     manifest = api(a.server, "/api/manifest", "GET")
@@ -131,6 +190,11 @@ def main():
     if not lis.ready.wait(30):
         raise SystemExit("drone listener did not start (ssh / ROS environment?)")
     time.sleep(2)
+
+    if a.hours > 0:
+        loop(a, items, lis)
+        lis.stop()
+        return
 
     rows = []
     for it in items:

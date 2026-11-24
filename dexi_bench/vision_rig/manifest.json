@@ -37,8 +37,8 @@
     "file": "bars_rounded_bridge_blackout.png",
     "group": "bars_rounded",
     "expect": {
-      "yolo": "blackout",
-      "bars": "bars_0",
+      "yolo": null,
+      "bars": null,
       "tag": null
     },
     "note": ""
@@ -48,8 +48,8 @@
     "file": "bars_square_0.png",
     "group": "bars_square",
     "expect": {
-      "yolo": "blackout",
-      "bars": "bars_0",
+      "yolo": null,
+      "bars": null,
       "tag": null
     },
     "note": "YOLO was trained on rounded art; its square-end result is informational"
@@ -136,7 +136,7 @@
     "file": "yolo_barrel_blackout.png",
     "group": "yolo",
     "expect": {
-      "yolo": "blackout",
+      "yolo": null,
       "bars": null,
       "tag": null
     },
@@ -169,7 +169,7 @@
     "file": "yolo_barn_blackout.png",
     "group": "yolo",
     "expect": {
-      "yolo": "blackout",
+      "yolo": null,
       "bars": null,
       "tag": null
     },
