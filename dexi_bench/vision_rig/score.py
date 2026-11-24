@@ -32,9 +32,8 @@ from pathlib import Path
 HERE = Path(__file__).parent
 REMOTE = "/tmp/vision_rig_listener.py"
 ENV = ("source /home/dexi/ros2_jazzy/install/setup.bash && source /home/dexi/dexi_ws/install/setup.bash && "
-       "export ROS_DOMAIN_ID=1 ROS_AUTOMATIC_DISCOVERY_RANGE=SUBNET && "
        "sudo -E env PATH=$PATH PYTHONPATH=$PYTHONPATH LD_LIBRARY_PATH=$LD_LIBRARY_PATH "
-       "AMENT_PREFIX_PATH=$AMENT_PREFIX_PATH ROS_DOMAIN_ID=1 ROS_AUTOMATIC_DISCOVERY_RANGE=SUBNET "
+       "AMENT_PREFIX_PATH=$AMENT_PREFIX_PATH ROS_DOMAIN_ID={domain} ROS_AUTOMATIC_DISCOVERY_RANGE=SUBNET "
        f"python3 -u {REMOTE}")
 
 
@@ -45,9 +44,9 @@ def api(base, path, method="POST"):
 
 
 class Listener:
-    def __init__(self, ssh):
+    def __init__(self, ssh, domain=1):
         subprocess.run(ssh + [f"cat > {REMOTE}"], input=(HERE / "drone_listener.py").read_bytes(), check=True)
-        self.p = subprocess.Popen(ssh + [ENV], stdout=subprocess.PIPE, stdin=subprocess.DEVNULL,
+        self.p = subprocess.Popen(ssh + [ENV.format(domain=domain)], stdout=subprocess.PIPE, stdin=subprocess.DEVNULL,
                                   stderr=subprocess.DEVNULL, text=True, bufsize=1)
         self.msgs = []
         self.ready = threading.Event()
@@ -174,6 +173,7 @@ def main():
     ap.add_argument("--server", default="http://127.0.0.1:8000")
     ap.add_argument("--settle", type=float, default=3.0)
     ap.add_argument("--dwell", type=float, default=8.0)
+    ap.add_argument("--domain", type=int, default=1, help="ROS_DOMAIN_ID of the drone's stack")
     ap.add_argument("--groups", default="", help="comma list; empty = all")
     ap.add_argument("--ignore-yolo", default="", help="YOLO classes to leave out of scoring")
     ap.add_argument("--out", type=Path, default=Path("results/vision_rig"))
@@ -187,7 +187,7 @@ def main():
     ssh = ["ssh", "-o", "BatchMode=yes", "-i", a.key, f"dexi@{a.drone}"]
     # No need to stop the loop: every show command holds the screen (server default
     # hold 30 s), and the server goes back to looping once this script stops.
-    lis = Listener(ssh)
+    lis = Listener(ssh, a.domain)
     if not lis.ready.wait(30):
         raise SystemExit("drone listener did not start (ssh / ROS environment?)")
     time.sleep(2)
